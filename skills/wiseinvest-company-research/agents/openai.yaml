@@ -1,0 +1,13 @@
+interface:
+  display_name: "WiseInvest 企业深度研究"
+  short_description: "按 Wise 风格解释企业生意、检验增长与估值，完成深度文章和研究更新"
+  default_prompt: "使用 $wiseinvest-company-research，研究我指定的公司，并按我的请求完成分析、文章或研究更新。"
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+policy:
+  products:
+  - "chatgpt"
+  - "codex"
+  - "api"
+  - "atlas"
+  allow_implicit_invocation: true

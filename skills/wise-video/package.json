@@ -1,0 +1,12 @@
+{
+  "name": "wise-video-runtime",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Pinned local animation runtime for WiseVideo templates",
+  "scripts": {
+    "prepare-assets": "node scripts/prepare-assets.cjs"
+  },
+  "dependencies": {
+    "gsap": "3.14.2"
+  }
+}

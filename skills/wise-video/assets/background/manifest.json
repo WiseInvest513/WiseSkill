@@ -1,0 +1,16 @@
+{
+  "scope": "个人定制动态背景及署名",
+  "files": {
+    "README.md": "a97aab616a59bf82e90fc2af1d79e4d0c39939868966ca2e817807e5522ad7e3",
+    "assets/base.png": "4c84bda6897c0ba64b71e0c66c25834588d592d1e53c382450e36eea76c80155",
+    "assets/earth-relief.png": "1769ba442087961e8e84ff0ab34b9a3f8a6ba5ac6dada9f3fd7412a14f294e1a",
+    "assets/wise-invest-logo.png": "924d9ed1ced09475361e05632082dbae9803b0d1f8206446e275c46b28d5c6cf",
+    "globe.js": "39c693803d85d81b0726ee9e6bc684f2988e92a6cbc9cc1be3e6c6aed95fcd85",
+    "index.html": "2b551f9f0c19ef4cb9d5c2c0bef0337d286ce524c790b8afc02e7fa29a033b66"
+  },
+  "runtime_dependency": {
+    "name": "gsap",
+    "version": "3.14.2",
+    "bundled": false
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wise 立体配图"
+  short_description: "为文章生成米白、深蓝与金色的立体配图，让实体和关系帮助读者理解内容"
+  default_prompt: "使用 $wise-editorial-3d，为这篇文章选择合适的配图位置，生成与参考图一致的米白、深蓝、金色立体插图。"

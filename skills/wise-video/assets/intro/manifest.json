@@ -1,0 +1,16 @@
+{
+  "scope": "固定开场及头像；不包含历史录音",
+  "files": {
+    "README.md": "5eb2dc3b88b9bd9c3de68c8236d0fed81e67ba54ae8a18ec2e95f3de4cc70162",
+    "assets/base.png": "4c84bda6897c0ba64b71e0c66c25834588d592d1e53c382450e36eea76c80155",
+    "assets/earth-relief.png": "1769ba442087961e8e84ff0ab34b9a3f8a6ba5ac6dada9f3fd7412a14f294e1a",
+    "assets/wise-avatar-original.png": "626c0049513f8b1e6fd3056f23179b9c90ae2d5c83e67ab9ae6638584d43055c",
+    "assets/wise-invest-logo.png": "924d9ed1ced09475361e05632082dbae9803b0d1f8206446e275c46b28d5c6cf",
+    "index.html": "4b86510d8c969eb4a757858d2c185fefaf1ce0b942ac1d46d5adda06cad2c13e"
+  },
+  "runtime_dependency": {
+    "name": "gsap",
+    "version": "3.14.2",
+    "bundled": false
+  }
+}

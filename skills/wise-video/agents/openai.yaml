@@ -1,0 +1,3 @@
+interface:
+  display_name: "WiseVideo"
+  short_description: "根据字幕与文案自动规划语义分镜、素材、动画、制作与验收的视频流程"

@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!*.example
+skills/wise-video/assets/background/assets/gsap.min.js
+skills/wise-video/assets/intro/assets/gsap.min.js
