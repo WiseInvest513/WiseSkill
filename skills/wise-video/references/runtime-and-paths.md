@@ -18,7 +18,7 @@ npm install --ignore-scripts
 npm run prepare-assets
 ```
 
-固定依赖 GSAP 3.14.2；准备脚本只把 npm 包内的运行库复制到随包背景与开场目录。编译时显式传 `--gsap SKILL_DIR/assets/background/assets/gsap.min.js`。此准备步骤需要 npm 网络和写入当前 Skill 目录的权限；Python 接入与校验不依赖它。若已有可信的本地同版本运行库，也可直接传该文件路径，不强制重复下载。
+固定依赖 GSAP 3.14.2；准备脚本把 npm 包内的运行库复制到随包背景与开场目录；片尾共用背景目录中的同一份运行库。编译时显式传 `--gsap SKILL_DIR/assets/background/assets/gsap.min.js`。此准备步骤需要 npm 网络和写入当前 Skill 目录的权限；Python 接入与校验不依赖它。若已有可信的本地同版本运行库，也可直接传该文件路径，不强制重复下载。
 
 ## 路径与个人模板
 
@@ -26,6 +26,7 @@ npm run prepare-assets
 
 - 默认个人背景：`SKILL_DIR/assets/background/`。先读其 README 和 manifest，再传 `--background`。保留冻结的地球、山峦和白底 10% 圆角小署名。
 - 可选个人开场：`SKILL_DIR/assets/intro/`。先读其说明，只有原文含对应开场或用户明确要求时传 `--intro-template` 与 `--intro-at-ms`。头像和开场文字是个人模板，不代表每个新主题都要插入。此包不带历史录音，声音仍来自本期输入。
+- 可选个人片尾：[固定片尾](../assets/outro/README.md)，位于 `SKILL_DIR/assets/outro/`。包含 Telegram 引导、真实头像、红色大订阅按钮和定投结语，默认 35.034 秒无声。按本期实际话术重排对象与动作，并统一原声/字幕；当前编译器没有 `--outro-template` 参数，需按现有制作引擎组合片尾，不能声称编译器自动接入。
 - 自定义模板：用用户选择的路径替换上述参数，并记录来源和哈希。背景可为本地静态图或兼容 HTML 模板；HTML 背景和开场有明确接口，不能把任意网页当作兼容模板，见 [编译接口](render-adapter.md)。
 - 本期输入、状态、批准记录、素材索引和历史版本保存在用户工作区。安装 Skill 不等于迁移已有制作项目。
 

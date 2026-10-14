@@ -1,0 +1,17 @@
+{
+  "scope": "Visual references carried with WiseVideo, independent of chat history",
+  "files": {
+    "bank.png": "3830dfbc3e663358cbae5b7f3da5ba689ceff299a8ddb830575be3e726c303a1",
+    "broker.png": "2eeb3584a923aa964846cd3279d6da7d98a001fc9d0a675a52727eacfa1f0d80",
+    "wallet.png": "017b7255bb6ee4484fcc8dad8498275537e093a67201df724ffc09e425db2929",
+    "certificate.png": "10dbc8c5e3ec2a101706d727b43f3272c9e8c963c13d4418f063f9bfaa026186",
+    "accepted-flow.png": "a9f1a227f2448da5ac00f8e1086741375c6925804b21309716a1ecf5de512761"
+  },
+  "roles": {
+    "bank.png": "style_reference",
+    "broker.png": "style_reference",
+    "wallet.png": "style_reference",
+    "certificate.png": "style_reference",
+    "accepted-flow.png": "accepted composition reference, not a universal four-card template"
+  }
+}

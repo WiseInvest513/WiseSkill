@@ -1,0 +1,63 @@
+{
+  "id": "wise-outro-approved-v1",
+  "scope": "个人已确认无声固定片尾；真实头像、TG品牌图、米白蓝金与大红订阅。",
+  "duration_seconds": 35.034,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "audio": "none",
+  "source_template_id": "wise-outro-approved-v1",
+  "source_html_sha256": "66d8539fb801a1bc3e9c5663556f25f58b3abe5043de11bb17e5a1d2af3ed0fa",
+  "style_actions_preserved": true,
+  "only_html_change": "Shared background resource prefix adapted from ../wise-background-approved-v1/ to ../background/.",
+  "files": {
+    "README.md": "3455d338beb2f6b61c349f27a3ffafe4e9af011e023aebbf47f13d265c09c857",
+    "assets/portrait.png": "626c0049513f8b1e6fd3056f23179b9c90ae2d5c83e67ab9ae6638584d43055c",
+    "assets/tg.png": "3e48ee356abe5c5d290712b3dc341ee4d94dc85568a82787a28cd3af63aa6494",
+    "hyperframes.json": "db0a6f8ecdd1dc5f2749c54d81c7d2ab68118e1c8948683892a2d58fb8c1be16",
+    "index.html": "414f8f502878a04b800f1bec79b171def0cb4a0ca30eb6fdbbd8243bfbb2bfe9",
+    "preview.html": "46a580b249a87d9c84f51e6b2782ef2f11a15a61247f447d64d05a2e2ed6c52a"
+  },
+  "runtime_dependency": {
+    "name": "gsap",
+    "version": "3.14.2",
+    "bundled": false,
+    "path": "../background/assets/gsap.min.js"
+  },
+  "local_resources": [
+    {
+      "path": "../background/assets/base.png",
+      "sha256": "4c84bda6897c0ba64b71e0c66c25834588d592d1e53c382450e36eea76c80155",
+      "bytes": 1158712
+    },
+    {
+      "path": "../background/assets/earth-relief.png",
+      "sha256": "1769ba442087961e8e84ff0ab34b9a3f8a6ba5ac6dada9f3fd7412a14f294e1a",
+      "bytes": 2288819
+    },
+    {
+      "path": "../background/assets/gsap.min.js",
+      "runtime_generated": true,
+      "name": "gsap",
+      "version": "3.14.2",
+      "bundled": false
+    },
+    {
+      "path": "../background/assets/wise-invest-logo.png",
+      "sha256": "924d9ed1ced09475361e05632082dbae9803b0d1f8206446e275c46b28d5c6cf",
+      "bytes": 60776
+    },
+    {
+      "path": "assets/portrait.png",
+      "sha256": "626c0049513f8b1e6fd3056f23179b9c90ae2d5c83e67ab9ae6638584d43055c",
+      "bytes": 1487431
+    },
+    {
+      "path": "assets/tg.png",
+      "sha256": "3e48ee356abe5c5d290712b3dc341ee4d94dc85568a82787a28cd3af63aa6494",
+      "bytes": 230733
+    }
+  ]
+}

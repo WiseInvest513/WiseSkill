@@ -1,12 +1,14 @@
 # 外部方法与实测依据
 
+> 历史验证说明：文中的旧测试项目仅是当时的验证记录；原工作区已按用户要求精简归档，这些工程不随包提供，也不是运行依赖。新内容在本期工作区重新验证。
+
 本Skill统一维护本项目的视频流程。以下是参考方法，不是新的调用入口，也不把外部默认风格、权限或审批要求带入本项目。
 
 - [HyperFrames Beat Direction](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-creative/references/beat-direction.md)：先明确观众要理解的变化，再让对象承担动作。
 - [HyperFrames Video Composition](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-creative/references/video-composition.md) 与 [Remotion Video Layout](https://github.com/remotion-dev/skills/blob/main/skills/remotion-best-practices/remotion-create/video-layout.md)：建立观看主次，按可见主体而非盒子决定尺度。保留原有引擎。
 - [SVG Icon Enrichment](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-animation/rules/svg-icon-enrichment.md) / [Control–Target Sync](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-animation/rules/control-target-sync.md)：有意义的部件运动，以及控制提示与目标同步。
 - [Remotion Captions](https://github.com/remotion-dev/skills/blob/main/skills/remotion-best-practices/remotion-captions/REFERENCE.md)：保留时间化文本，字幕精度不能超过源数据。
-- [用户参考教程](https://invest-nav.com/tutorials/ai-tutorials/text/codex-ai-video-editing-workflow/)：连续图解保留位置和关系，调整文字后重排。无需照搬其每一步手动确认或特定配色。
+- [用户参考教程](https://invest-nav.com/tutorials/ai-tutorials/text/codex-ai-video-editing-workflow/)：先用实际分镜图验证表达，保留独立素材与可编辑文字；再针对已发现的问题局部修订，设计稳定后处理动画。2026-10-12 实际阅读教程并查看第一版、第一轮和第二轮改版示例，未观看示例视频；不同镜头的示例不能冒称严格同镜前后对比。迁移方法已落实到 [视觉设计与迭代](visual-direction.md)，不照搬纸张、字体、人物、默认加框或多入口架构。
 
 ## 2026-10-11 的三轮本地回归
 
@@ -24,3 +26,9 @@
 
 
 前向演练还发现“仅24秒正文请求5分钟”被接入工具扩展到300秒的问题，已修复并加反例测试。whole-cues按已提供内容截止，exact超源保持pending；接线检查从原文独立重算源末尾，不能用自填ready绕过。新题材只验证规划，不伪造5分钟正文。
+
+## 2026-10-12 实际失败带来的修订
+
+BBAE 第一阶段技术检查通过后被用户否定审美和表达。可复用失误：用整场对象绑定制造覆盖率、批量复制通用语义字段、同一入场动作充当多数编排、制作备注形成第二字幕、库存建筑替代地理位置、同组主图完成度不一致。
+
+本次不靠增加“丰富/优雅”等形容词解决：先运行设计退化候选扫描，再从新文稿选择代表镜头、制作真实样张、按已接受素材检查、定点修正；将内部审阅与上屏文案分开。结构检查、视觉审阅、运动实测各有结论，不能互相代替。具体品牌、坐标和费用关系留项目，不写成通用镜头模板。
