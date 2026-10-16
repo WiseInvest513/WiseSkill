@@ -8,6 +8,7 @@ Wise 的个人 AI 工作方法合集：把经过实际使用和迭代的工作�
 
 | Skill | 适合做什么 | 调用 |
 | --- | --- | --- |
+| [Wise 视频封面与标题](skills/wise-thumbnail/SKILL.md) | 延续片内风格，默认左侧圆体大字、右侧仅地球背景，检查手机可读性并复用封面模板；提炼30–40字发布标题、核验数据与内容一致性 | `$wise-thumbnail` |
 | [WiseVideo](skills/wise-video/SKILL.md) | 读文案/SRT/音频，分析实体和关系，盘点素材，生成语义分镜和动画工程，检查承接、布局与原声同步 | `$wise-video` |
 | [Wise 立体配图](skills/wise-editorial-3d/SKILL.md) | 为文章生成米白、深蓝、少量金色的立体实物配图，让画面解释关系 | `$wise-editorial-3d` |
 | [WiseInvest 企业深度研究](skills/wiseinvest-company-research/SKILL.md) | 从 Wise 的视角理解企业、核验经营与估值、形成判断并撰写深度文章 | `$wiseinvest-company-research` |
@@ -20,7 +21,7 @@ Wise 的个人 AI 工作方法合集：把经过实际使用和迭代的工作�
 
 把下面这段话发送给 Codex：
 
-> 请使用 skill-installer，从 https://github.com/WiseInvest513/WiseSkill 安装 skills/wise-video、skills/wise-editorial-3d 和 skills/wiseinvest-company-research。先检查本机是否已有同名 Skill；如已有则保留旧版备份后按我的要求更新。安装后读取对应 SKILL.md，按实际任务准备运行依赖。
+> 请使用 skill-installer，从 https://github.com/WiseInvest513/WiseSkill 安装 skills/wise-video、skills/wise-thumbnail、skills/wise-editorial-3d 和 skills/wiseinvest-company-research。先检查本机是否已有同名 Skill；如已有则保留旧版备份后按我的要求更新。安装后读取对应 SKILL.md，按实际任务准备运行依赖。
 
 也可以只指定其中一个目录。Skill 的目录需要完整保留，包括 `references/`、`assets/`、`scripts/` 和 `agents/`。
 
@@ -47,6 +48,12 @@ python3 scripts/install.py --skill wise-editorial-3d
 > 使用 $wise-video，读取这份 SRT，先处理前 5 分钟。先分析每句话应该由什么画面承接，审视缺少哪些准确品牌/产品素材，再开始制作。声音使用我提供的原始音频；缺少音频时先做无声预览。复用随 Skill 保存的背景和风格。
 
 视频流程会保留时间戳、源文件、素材来源和版本记录。默认不会因为存在某张图片而改写文稿，也不会自动把 SRT 当成重新配音的许可。
+
+### 封面与发布标题
+
+> 使用 $wise-thumbnail 为这期视频准备封面和发布标题。沿用已确认的左侧圆体大字、右侧地球背景；标题按30–40字突出当下处境、核心问题和观看价值，核验数字与视频内容。
+
+仅要求标题时只处理文案，不生成图片或重新渲染视频。封面模板位于 `skills/wise-thumbnail/assets/round-globe/`，需同时安装 `wise-video` 并按下面步骤准备GSAP；两项Skill保持同级目录。跨机器不携带系统字体，确认版使用 `Yuanti SC` / `STYuanti-SC-Bold`，缺字体时先取得可用的授权圆体，再检查中文和320×180效果。
 
 ### 为文章配图
 
@@ -86,9 +93,12 @@ npm run prepare-assets
 
 ## 本版视频流程
 
+- 全文提取信息性名词与概念，判断文字、准确身份、概念素材、数据图和关系表达；逐句回查与素材检查通过后再进入批量制作。
 - 从每句话的含义规划当前焦点、旧元素退场和前后承接；把地球视为背景，按整幅画布构图。
 - 先理解和取得元素，再验证静态构图、实现动作、检查原声同步，最后导出。
 - 实际操作截图按任务切幕，复用统一加载方式、尺寸与标注；下载完成后的注意事项单独成幕。
+- 章节、定义和结论独立建立焦点，同级列举完成态保持平衡；金额单位不因换成纸钞图就从USDT变为USD。
+- 完整视频交付包含封面和发布标题，沿用确认模板；数字核验、内容对应与手机可读性分别检查。
 - 原件、固定模板、当前工程、最终导出分开保存；用户确认并授权后清理重复与临时文件。
 
 ## 验证与扩展

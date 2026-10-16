@@ -26,13 +26,13 @@ for p in root.rglob('*'):
                 if '://' not in target and not target.startswith('#'):
                     if not (p.parent / target.split('#')[0]).exists():
                         errors.append('Broken link in ' + str(p.relative_to(root)) + ': ' + target)
-for manifest in root.glob('skills/wise-video/assets/*/manifest.json'):
+for manifest in list(root.glob('skills/wise-video/assets/*/manifest.json')) + list(root.glob('skills/wise-thumbnail/assets/*/manifest.json')):
     data = json.loads(manifest.read_text(encoding='utf-8'))
     for rel, expected in data['files'].items():
         p = manifest.parent / rel
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest() != expected:
             errors.append('Missing or modified template file: ' + rel)
-for name in ['wise-video', 'wise-editorial-3d', 'wiseinvest-company-research']:
+for name in ['wise-video', 'wise-thumbnail', 'wise-editorial-3d', 'wiseinvest-company-research']:
     p = root / 'skills' / name / 'SKILL.md'
     if not p.is_file() or not p.read_text(encoding='utf-8').startswith('---\nname: ' + name + '\n'):
         errors.append('Invalid skill entry: ' + name)

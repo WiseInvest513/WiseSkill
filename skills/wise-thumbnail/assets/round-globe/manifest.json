@@ -1,0 +1,15 @@
+{
+  "id": "wise-thumbnail-round-globe-approved-v1",
+  "status": "approved",
+  "approval": "2026-10-15 用户对V4回复：非常好",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "background": "../../../wise-video/assets/background/index.html",
+  "background_time_seconds": 25,
+  "font": "Yuanti SC / STYuanti-SC-Bold (external system font, not bundled)",
+  "files": {
+    "index.html": "0dfd0c877423ad0d9aeceacb2ef5f9ffb7f8ef075295b09b8fcf311ca1939644"
+  }
+}

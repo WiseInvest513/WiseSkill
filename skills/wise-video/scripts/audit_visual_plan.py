@@ -2,10 +2,11 @@
 """Read-only design risk scan. Findings request review; they do not grade beauty.
 
 Exit 0 means scanning completed, including when review is required. Exit 2 means
-the input/output could not be processed. No SRT text or source beat text is scanned
-for production-language leakage; only rendered object text is inspected.
+the input/output could not be processed. Source beat text is used only for explicit denomination comparison. Production-
+language leakage inspects rendered object text, never the source narration.
 """
 import argparse
+from decimal import Decimal, InvalidOperation
 from collections import defaultdict
 import json
 from pathlib import Path
@@ -25,6 +26,60 @@ def _text(value):
 
 def _number(value, default=0):
     return value if isinstance(value, (int, float)) and not isinstance(value, bool) else default
+
+
+def _money_pairs(text):
+    """Explicit numeric units only; no inferred exchange rate or image meaning."""
+    value = _text(text)
+    if not value:
+        return set()
+    number = r"([0-9][0-9,]*(?:\.[0-9]+)?)"
+    unit = r"(USDT|USDC|USD|HKD|CNY|美元|美金|港币|港元|人民币)"
+    result = set()
+    aliases = {"美元": "USD", "美金": "USD", "港币": "HKD", "港元": "HKD", "人民币": "CNY"}
+    for match in re.finditer(number + r"\s*" + unit + r"(?![A-Za-z])", value, re.I):
+        try:
+            amount = str(Decimal(match.group(1).replace(",", "")).normalize())
+        except InvalidOperation:
+            continue
+        raw_unit = match.group(2).upper()
+        result.add((amount, aliases.get(raw_unit, raw_unit)))
+    # A bare '$' is ambiguous (USD/HKD/etc.), so it is not assigned a currency.
+    # Check bare-dollar labels visually; the source unit should remain explicit.
+    return result
+
+
+def _audit_denominations(beats, beat_scenes, scenes, add):
+    """Flag observable same-number unit changes, not exchange correctness."""
+    scene_map = {str(s.get("id")): s for s in scenes}
+    checked = 0
+    for beat in beats:
+        source_pairs = _money_pairs(beat.get("text"))
+        if not source_pairs:
+            continue
+        checked += 1
+        for sid in beat_scenes.get(str(beat.get("id", "")), []):
+            scene = scene_map.get(sid, {})
+            for obj in scene.get("objects", []):
+                if not isinstance(obj, dict) or obj.get("role") in ("subtitle", "background", "signature"):
+                    continue
+                # Only compare scheduled objects that can overlap this beat.
+                span = obj.get("schedule_interval_ms")
+                start, end = beat.get("source_start_ms"), beat.get("source_end_ms")
+                if (isinstance(span, list) and len(span) == 2 and
+                        all(isinstance(n, (int, float)) for n in [*span, start, end]) and
+                        (span[1] <= start or span[0] >= end)):
+                    continue
+                shown_pairs = _money_pairs(obj.get("text"))
+                for amount, shown_unit in shown_pairs - source_pairs:
+                    source_units = sorted({u for a, u in source_pairs if a == amount})
+                    if source_units:
+                        add("explicit_amount_unit_conflict", [sid], dict(
+                            beat_id=beat.get("id"), object_id=obj.get("id"),
+                            amount=amount, source_units=source_units, shown_unit=shown_unit,
+                            source_text=beat.get("text"), rendered_text=obj.get("text")),
+                            "同数额的显式单位发生变化；核对是否为有依据的兑换/比较，或换图时误把稳定币标成法币。没有时间接线时还需确认是否同时可见。")
+    return checked
 
 
 def _audit_sentence_states(plan, scenes, add, required=False):
@@ -154,6 +209,7 @@ def audit(plan, require_sentence_states=False):
                              evidence=evidence, recommendation=recommendation))
 
     state_count = _audit_sentence_states(plan, scenes, add, require_sentence_states)
+    money_count = _audit_denominations(beats, beat_scenes, scenes, add)
 
     # Repetition is a review signal, never a ban: comparison and long holds can
     # legitimately repeat. The report preserves exact values and affected beats.
@@ -252,9 +308,10 @@ def audit(plan, require_sentence_states=False):
             "检查是否形成与原字幕并行的第二条说明轨；正常条件标签不在此禁用，逐条判断底栏的观众价值。")
     return dict(schema_version=1, status="review_required" if findings else "no_automatic_findings",
                 scan_completed=True, aesthetic_approval=False,
+                denomination_scan=dict(checked_beats=money_count, explicit_numbers_only=True),
                 sentence_state_scan=dict(present="sentence_states" in plan, checked=state_count,
                                          required=require_sentence_states),
-                limits="只查结构绑定和启发式候选；不验证焦点/保留理由的语义，不观察实际大小、对比度或动效。无发现不等于语义、审美或动态通过。未扫描原始 SRT/beat 原文。",
+                limits="只查结构绑定和启发式候选；不验证焦点/保留理由的语义，不观察实际大小、对比度或动效。无发现不等于语义、审美或动态通过。仅为显式币种对照读取 beat 原文；不扫描中文大写数额、不解释纸钞图像或仅有 $ 的币种，也不验证汇率。",
                 summary=dict(scenes=len(scenes), beats=len(beats), actions=len(all_actions),
                              findings=len(findings)), findings=findings)
 

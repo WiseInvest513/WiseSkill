@@ -108,6 +108,45 @@ class VisualAuditTests(unittest.TestCase):
         objects[1].update(w=60, h=60, role="connector")
         self.assertNotIn("mixed_main_asset_and_svg_paper", codes(MODULE.audit(p)))
 
+    def test_explicit_stablecoin_amount_cannot_silently_become_dollars(self):
+        p = plan(1)
+        p["beats"] = [{"id": "s0", "text": "有机会获得50 USDT"}]
+        p["render_spec"]["scenes"][0]["objects"] = [
+            {"id": "reward", "text": "50 USD"}]
+        report = MODULE.audit(p)
+        self.assertIn("explicit_amount_unit_conflict", codes(report))
+        self.assertEqual(report["findings"][0]["evidence"]["source_units"], ["USDT"])
+        self.assertFalse(report["aesthetic_approval"])
+
+    def test_real_conversion_with_both_source_units_is_allowed(self):
+        p = plan(1)
+        p["beats"] = [{"id": "s0", "text": "示例：100 USDT兑换为100 USD"}]
+        p["render_spec"]["scenes"][0]["objects"] = [
+            {"id": "before", "text": "100 USDT"}, {"id": "after", "text": "100美元"}]
+        self.assertNotIn("explicit_amount_unit_conflict", codes(MODULE.audit(p)))
+
+    def test_equal_amount_formatting_and_units_are_preserved(self):
+        p = plan(1)
+        p["beats"] = [{"id": "s0", "text": "净入金1,000 USDT"}]
+        p["render_spec"]["scenes"][0]["objects"] = [
+            {"id": "deposit", "text": "1000.00 USDT"}]
+        self.assertNotIn("explicit_amount_unit_conflict", codes(MODULE.audit(p)))
+
+    def test_prior_unit_display_outside_beat_does_not_trigger_conflict(self):
+        p = plan(1)
+        p["beats"] = [{"id": "s0", "text": "50 USDT奖励", "source_start_ms": 2000,
+                       "source_end_ms": 3000}]
+        p["render_spec"]["scenes"][0]["objects"] = [
+            {"id": "prior-usd", "text": "50美元", "schedule_interval_ms": [0, 1900]}]
+        self.assertNotIn("explicit_amount_unit_conflict", codes(MODULE.audit(p)))
+
+    def test_bare_dollar_symbol_is_not_assumed_to_be_usd(self):
+        p = plan(1)
+        p["beats"] = [{"id": "s0", "text": "50港币"}]
+        p["render_spec"]["scenes"][0]["objects"] = [{"id": "cash", "text": "$50"}]
+        self.assertNotIn("explicit_amount_unit_conflict", codes(MODULE.audit(p)))
+        self.assertIn("仅有 $", MODULE.audit(p)["limits"])
+
     def test_input_not_mutated(self):
         p = plan()
         before = copy.deepcopy(p)

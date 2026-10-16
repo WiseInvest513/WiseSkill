@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wise 视频封面与标题"
+  short_description: "沿用确认封面风格，提炼完整有力的发布标题，核验数字与内容一致性"
+  default_prompt: "使用 $wise-thumbnail 为这期视频制作封面和发布标题，沿用已确认风格并核对数据与手机可读性。"

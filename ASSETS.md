@@ -2,6 +2,7 @@
 
 本包按作者要求保留个人视觉资产：
 
+- `skills/wise-thumbnail/assets/round-globe/`：已确认的左侧圆体大字封面排版源，相对复用wise-video背景；系统Yuanti SC字体不打包，运行依赖按仓库说明准备。
 - `skills/wise-video/assets/background/`：已确认的动态背景代码与底图、地球纹理、Wise 小署名。原版代码与图片哈希记录在该目录 manifest；未包含历史成片或正文截图。
 - `skills/wise-video/assets/intro/`：已确认的头像、品牌文字及左移/欢迎语动效。移除了历史开场录音，保留视觉模板。
 - `skills/wise-video/assets/outro/`：已确认的 Telegram 引导、Wise 真实头像和红色大订阅片尾；35.034 秒无声模板，背景从同包 background 目录复用。
