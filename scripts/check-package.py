@@ -32,7 +32,7 @@ for manifest in list(root.glob('skills/wise-video/assets/*/manifest.json')) + li
         p = manifest.parent / rel
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest() != expected:
             errors.append('Missing or modified template file: ' + rel)
-for name in ['wise-video', 'wise-thumbnail', 'wise-editorial-3d', 'wiseinvest-company-research']:
+for name in ['wise-video', 'wise-thumbnail', 'wise-editorial-3d', 'wiseinvest-company-research', 'wiseinvest-stock-writer', 'wise-silver-glass']:
     p = root / 'skills' / name / 'SKILL.md'
     if not p.is_file() or not p.read_text(encoding='utf-8').startswith('---\nname: ' + name + '\n'):
         errors.append('Invalid skill entry: ' + name)

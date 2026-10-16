@@ -12,6 +12,8 @@ Wise 的个人 AI 工作方法合集：把经过实际使用和迭代的工作�
 | [WiseVideo](skills/wise-video/SKILL.md) | 读文案/SRT/音频，分析实体和关系，盘点素材，生成语义分镜和动画工程，检查承接、布局与原声同步 | `$wise-video` |
 | [Wise 立体配图](skills/wise-editorial-3d/SKILL.md) | 为文章生成米白、深蓝、少量金色的立体实物配图，让画面解释关系 | `$wise-editorial-3d` |
 | [WiseInvest 企业深度研究](skills/wiseinvest-company-research/SKILL.md) | 从 Wise 的视角理解企业、核验经营与估值、形成判断并撰写深度文章 | `$wiseinvest-company-research` |
+| [WiseInvest 财经写作](skills/wiseinvest-stock-writer/SKILL.md) | 保留 Wise 的观点与口吻，核验事实和数据，撰写短贴、公众号长文、财报分析与合作稿；附写作规则和样本 | `$wiseinvest-stock-writer` |
+| [Wise 白金银白玻璃配图](skills/wise-silver-glass/SKILL.md) | 复用银白、玻璃与少量香槟金的视觉风格；小红书默认 3:4 竖版，视频默认 16:9 横版，分别构图 | `$wise-silver-glass` |
 
 后续将继续加入行业研究等能力。
 
@@ -21,7 +23,7 @@ Wise 的个人 AI 工作方法合集：把经过实际使用和迭代的工作�
 
 把下面这段话发送给 Codex：
 
-> 请使用 skill-installer，从 https://github.com/WiseInvest513/WiseSkill 安装 skills/wise-video、skills/wise-thumbnail、skills/wise-editorial-3d 和 skills/wiseinvest-company-research。先检查本机是否已有同名 Skill；如已有则保留旧版备份后按我的要求更新。安装后读取对应 SKILL.md，按实际任务准备运行依赖。
+> 请使用 skill-installer，从 https://github.com/WiseInvest513/WiseSkill 安装 skills/wise-video、skills/wise-thumbnail、skills/wise-editorial-3d、skills/wiseinvest-company-research、skills/wiseinvest-stock-writer 和 skills/wise-silver-glass。先检查本机是否已有同名 Skill；如已有则保留旧版备份后按我的要求更新。安装后读取对应 SKILL.md，按实际任务准备运行依赖。
 
 也可以只指定其中一个目录。Skill 的目录需要完整保留，包括 `references/`、`assets/`、`scripts/` 和 `agents/`。
 
@@ -67,6 +69,20 @@ python3 scripts/install.py --skill wise-editorial-3d
 
 随包保留最新企业介绍框架、证据与估值规则、阶段评级和 Wise 写作规范。涉及最新资料时需要联网核验；没有资料或依据时不得编造。
 
+### 财经写作
+
+> 使用 $wiseinvest-stock-writer，按 WiseInvest 的口吻把下面的观点写成一篇公众号长文。保留我的核心判断，核验事件和关键数据，解释影响机制，不编造持仓或个人经历。
+
+随包保留本地 3.2.0 版本的写作规则、研究标准、短贴与长文指南、合作稿指南、样本及检查脚本。企业研究负责理解和判断公司，财经写作负责将研究与观点写成适合当前用途的内容；不必为每次短评启动完整企业研究。
+
+### 白金银白玻璃配图
+
+> 使用 $wise-silver-glass，为这个主题做小红书版，3:4 竖图，保留白金银白玻璃质感。
+
+> 使用 $wise-silver-glass，为这个主题做视频版，16:9 横图，保持同一套材质和光线。
+
+横版和竖版共用风格，但分别安排主体、标题和留白，不默认拉伸或裁切；明确指定的比例优先。随包包含五张实际风格参考、共用提示词、横版与竖版构图规则。与米白深蓝的 `wise-editorial-3d` 是两套不同的视觉风格，按任务选择，不混用。
+
 ## 运行依赖
 
 - **读内容、规划和 Python 校验**：Python 3.10+，脚本仅用标准库。
@@ -87,7 +103,7 @@ npm run prepare-assets
 
 ## 随包素材
 
-本仓库为 Wise 个人完整版，包含已确认的动态地球与山峦背景、白底 10% 圆角小署名、固定开场、红色大订阅片尾、Telegram 引导图和 Wise 头像，以及文章立体配图参考。**不包含历史录音、视频成片或整期私有工程。**
+本仓库为 Wise 个人完整版，包含已确认的动态地球与山峦背景、白底 10% 圆角小署名、固定开场、红色大订阅片尾、Telegram 引导图和 Wise 头像，以及文章立体配图、白金银白玻璃配图参考和财经写作样本。**不包含历史录音、视频成片或整期私有工程。**
 
 背景与署名跟随 Skill 一起保存，因此不依赖旧聊天。其他使用者可以替换自己的品牌和头像；不要将 Wise 本人形象当成通用模板身份。图片风格会受模型和新主题影响，Skill 提供稳定参考与检查方法，不保证每次生成完全相同。
 

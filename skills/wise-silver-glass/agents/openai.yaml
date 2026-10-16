@@ -1,0 +1,6 @@
+interface:
+  display_name: "Wise 银白玻璃配图"
+  short_description: "复用 Wise 白金银白玻璃风格，分别制作 16:9 横版和 3:4 竖版配图与封面。"
+  default_prompt: "使用 $wise-silver-glass，按这次用途选择 16:9 横版或 3:4 竖版构图，保持银白玻璃材质、品牌和内容准确。"
+policy:
+  allow_implicit_invocation: true
