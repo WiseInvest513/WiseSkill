@@ -1,0 +1,79 @@
+{
+  "template_id": "wise-thumbnail-bold-globe",
+  "status": "approved",
+  "approval": {
+    "date": "2026-10-20",
+    "evidence": "用户查看封面V2与发布配套后：OK，把这些东西给它收敛到咱们的一个这个skills里面。",
+    "selected_candidate": "SP500-cover-v2"
+  },
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "aspect": "16:9"
+  },
+  "brand": {
+    "palette": [
+      "#faf7ef",
+      "#223c51",
+      "#98753b"
+    ],
+    "fonts": [
+      {
+        "family": "PingFang SC",
+        "actual": "PingFangSC-Semibold",
+        "source": "macOS系统字体；不分发字体文件"
+      },
+      {
+        "family": "Arial",
+        "weight": "bold",
+        "source": "系统字体；不分发字体文件"
+      }
+    ],
+    "signature": "复用背景固定小署名"
+  },
+  "variable_fields": [
+    "series",
+    "line-a",
+    "line-b",
+    "claim.lead",
+    "claim.number",
+    "claim.label",
+    "scope",
+    "note"
+  ],
+  "layout": {
+    "title_area": [
+      120,
+      248,
+      1130
+    ],
+    "right_foreground": "none",
+    "font_sizes": {
+      "line_a": 128,
+      "line_b": 138,
+      "number": 190,
+      "label": 105,
+      "lead": 64,
+      "scope": 44,
+      "note": 33
+    },
+    "background_time_seconds": 25
+  },
+  "files": {
+    "index.html": "39da5fd8412f4d6f9be9bc69f74a18b6523519061769992dd25c903bd889ebab",
+    "README.md": "a22b1fa6bd3c23a69bec027af35016a697d87dd8037d3ffac41284e78b45d43b"
+  },
+  "dependencies": {
+    "../../../wise-video/assets/background/index.html": "2b551f9f0c19ef4cb9d5c2c0bef0337d286ce524c790b8afc02e7fa29a033b66",
+    "../../../wise-video/assets/background/assets/base.png": "4c84bda6897c0ba64b71e0c66c25834588d592d1e53c382450e36eea76c80155",
+    "../../../wise-video/assets/background/assets/earth-relief.png": "1769ba442087961e8e84ff0ab34b9a3f8a6ba5ac6dada9f3fd7412a14f294e1a",
+    "../../../wise-video/assets/background/assets/wise-invest-logo.png": "924d9ed1ced09475361e05632082dbae9803b0d1f8206446e275c46b28d5c6cf"
+  },
+  "approved_export_sha256": "6c0b403b21d0282d0581898e79f3d28bcc10f0309be8f1799870aed7ee995bf9",
+  "qa": {
+    "full_size_viewed": true,
+    "thumbnail_320x180_viewed": true,
+    "actual_font_confirmed": true
+  },
+  "dependency_notes": "相对复用../../../wise-video/assets/background/，其GSAP依赖按分发安装说明准备；系统字体不复制，缺失时选已授权的相近硬朗字体并重新检查。"
+}
