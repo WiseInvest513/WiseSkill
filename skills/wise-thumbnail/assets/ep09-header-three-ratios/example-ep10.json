@@ -1,0 +1,72 @@
+{
+  "layout": "short",
+  "episode": "10",
+  "series": "纳指、标普投资系列",
+  "topic": "加息买入，降息卖出？",
+  "footer": "历史样本，不代表未来收益",
+  "variants": {
+    "16x9": {
+      "lines": [
+        {
+          "role": "lead",
+          "text": "加息买纳指",
+          "font_size": 210
+        },
+        {
+          "role": "main",
+          "text": "4轮历史全赚？",
+          "font_size": 196,
+          "line_gap": 32
+        }
+      ],
+      "scope": [
+        "首次加息买 · 首次降息卖",
+        "曾从高点回撤54.7%"
+      ]
+    },
+    "3x4": {
+      "lines": [
+        {
+          "role": "lead",
+          "text": "加息买纳指",
+          "font_size": 180
+        },
+        {
+          "role": "main",
+          "text": "4轮历史",
+          "font_size": 244,
+          "line_gap": 42
+        },
+        {
+          "role": "last",
+          "text": "全赚钱？",
+          "font_size": 244,
+          "line_gap": 24
+        }
+      ],
+      "scope": [
+        "首次加息买 · 首次降息卖",
+        "曾从高点回撤54.7%"
+      ]
+    },
+    "4x3": {
+      "lines": [
+        {
+          "role": "lead",
+          "text": "加息买纳指",
+          "font_size": 205
+        },
+        {
+          "role": "main",
+          "text": "4轮历史全赚？",
+          "font_size": 174,
+          "line_gap": 40
+        }
+      ],
+      "scope": [
+        "首次加息买 · 首次降息卖",
+        "曾从高点回撤54.7%"
+      ]
+    }
+  }
+}

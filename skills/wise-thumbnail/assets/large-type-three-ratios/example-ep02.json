@@ -1,0 +1,56 @@
+{
+  "layout": "question",
+  "series": "纳指投资系列 · 第二期",
+  "footer": "用历史数据，把问题讲清楚",
+  "variants": {
+    "16x9": {
+      "lines": [
+        {
+          "role": "lead",
+          "text": "纳指涨了这么多"
+        },
+        {
+          "role": "main",
+          "text": "现在买晚了吗？"
+        }
+      ],
+      "scope": [
+        "价格 · 盈利 · 持有期限"
+      ]
+    },
+    "3x4": {
+      "lines": [
+        {
+          "role": "lead",
+          "text": "纳指涨了这么多"
+        },
+        {
+          "role": "main",
+          "text": "现在买"
+        },
+        {
+          "role": "main",
+          "text": "晚了吗？"
+        }
+      ],
+      "scope": [
+        "价格 · 盈利 · 持有期限"
+      ]
+    },
+    "4x3": {
+      "lines": [
+        {
+          "role": "lead",
+          "text": "纳指涨了这么多"
+        },
+        {
+          "role": "main",
+          "text": "现在买晚了吗？"
+        }
+      ],
+      "scope": [
+        "价格 · 盈利 · 持有期限"
+      ]
+    }
+  }
+}

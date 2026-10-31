@@ -1,0 +1,57 @@
+{
+  "layout": "short",
+  "series": "纳指投资系列 · 第一期",
+  "footer": "纳指100 × 标普500",
+  "variants": {
+    "16x9": {
+      "lines": [
+        {
+          "role": "lead",
+          "text": "买纳指"
+        },
+        {
+          "role": "main",
+          "text": "到底买什么？"
+        }
+      ],
+      "scope": [
+        "看懂指数结构、回报与风险"
+      ]
+    },
+    "3x4": {
+      "lines": [
+        {
+          "role": "lead",
+          "text": "买纳指"
+        },
+        {
+          "role": "main",
+          "text": "到底买"
+        },
+        {
+          "role": "last",
+          "text": "什么？"
+        }
+      ],
+      "scope": [
+        "看懂指数结构",
+        "回报与风险"
+      ]
+    },
+    "4x3": {
+      "lines": [
+        {
+          "role": "lead",
+          "text": "买纳指"
+        },
+        {
+          "role": "main",
+          "text": "到底买什么？"
+        }
+      ],
+      "scope": [
+        "看懂指数结构、回报与风险"
+      ]
+    }
+  }
+}

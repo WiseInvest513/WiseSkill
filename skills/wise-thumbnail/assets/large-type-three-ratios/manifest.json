@@ -1,0 +1,98 @@
+{
+  "template_id": "wise-thumbnail-large-type-three-ratios-approved-v1",
+  "status": "approved",
+  "approval": {
+    "date": "2026-10-27",
+    "evidence": "ok 就这样 后续都按照这个去制作，就是三张主图16：9 3:4 4:3 并且落到文件夹里面",
+    "selected_candidate": "EP01/EP02 large type; globe revision2 (+25% vs first large-type draft)",
+    "scope": "Approved style at3:4 and4:3;16:9 extended to same style as explicitly requested."
+  },
+  "canvases": {
+    "16x9": [
+      1920,
+      1080
+    ],
+    "3x4": [
+      1200,
+      1600
+    ],
+    "4x3": [
+      1600,
+      1200
+    ]
+  },
+  "brand": {
+    "palette": [
+      "#faf7ef",
+      "#223c51",
+      "#98753b"
+    ],
+    "font_sources": [
+      "PingFang SC:macOS系统字体，不分发",
+      "Arial数字字体按需要使用"
+    ],
+    "signature": "原品牌PNG；白底10%圆角"
+  },
+  "layout": {
+    "primary_focus": "超大标题优先，地球为右下角辅助",
+    "headline_reference_px": [
+      174,
+      264
+    ],
+    "globe": {
+      "3x4": {
+        "scale": 0.8,
+        "center": [
+          1160,
+          1450
+        ]
+      },
+      "4x3": {
+        "scale": 0.85,
+        "center": [
+          1540,
+          1150
+        ]
+      },
+      "16x9": {
+        "scale": 0.85,
+        "center": [
+          1870,
+          1060
+        ]
+      }
+    },
+    "background_time_seconds": 25
+  },
+  "variable_fields": [
+    "series",
+    "footer",
+    "layout",
+    "variants[ratio].lines[].role",
+    "variants[ratio].lines[].text",
+    "variants[ratio].lines[].font_size",
+    "variants[ratio].lines[].line_gap",
+    "variants[ratio].scope"
+  ],
+  "files": {
+    "index.html": "9911b0f6223678522b651aa5974726d9923a7ccd9a1301e3bf0cbaa78d647dbf",
+    "example-ep02.json": "f7eaa2d1b6b42c1e136278137a68127c702450a7611c97e708cedae4a47dd22d",
+    "README.md": "f2e69a1dca1d110c38bb9023ca8fa25889ef1e8d2efefb85e2e6904519a4fb85",
+    "example-ep01.json": "e6cf9bfce44f4aa05f0f97afb6f83cd46001f90093622bf871be393bb08cace3"
+  },
+  "dependencies": {
+    "../../../wise-video/assets/background/index.html": "2b551f9f0c19ef4cb9d5c2c0bef0337d286ce524c790b8afc02e7fa29a033b66",
+    "../../../wise-video/assets/background/assets/gsap.min.js": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
+    "../../../wise-video/assets/background/assets/base.png": "4c84bda6897c0ba64b71e0c66c25834588d592d1e53c382450e36eea76c80155",
+    "../../../wise-video/assets/background/assets/earth-relief.png": "1769ba442087961e8e84ff0ab34b9a3f8a6ba5ac6dada9f3fd7412a14f294e1a",
+    "../../../wise-video/assets/background/assets/wise-invest-logo.png": "924d9ed1ced09475361e05632082dbae9803b0d1f8206446e275c46b28d5c6cf"
+  },
+  "qa": {
+    "six_local_template_outputs_match_delivered_jpgs_exactly": true,
+    "portable_template_match_with_documented_gsap_dependency_supplied": true,
+    "full_size_viewed": true,
+    "thumbnail_check": "All six delivered examples viewed at320px width with matching aspect ratios"
+  },
+  "generation_recipe": "index.html?ratio=16x9|3x4|4x3&content=<本期JSON>;等待window.coverReady，然后按画布尺寸JPEG94导出。",
+  "runtime_note": "GSAP运行时按WiseVideo安装说明准备，未随本目录分发。"
+}

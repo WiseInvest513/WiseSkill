@@ -1,0 +1,79 @@
+{
+  "template_id": "wise-thumbnail-ep09-header-approved-v2",
+  "status": "approved",
+  "approval": {
+    "date": "2026-10-30",
+    "evidence": "后面的封面都按照第9期来做：左边写内容，右边放我自己的头像",
+    "reference_episode": "09",
+    "scope": "沿用第9期三比例封面的品牌位置及大字地球层级；示例内容非所有期通用"
+  },
+  "canvases": {
+    "16x9": [
+      1920,
+      1080
+    ],
+    "3x4": [
+      1200,
+      1600
+    ],
+    "4x3": [
+      1600,
+      1200
+    ]
+  },
+  "brand": {
+    "content_position": "upper-left",
+    "signature_position": "upper-right",
+    "signature_asset": "original WiseInvest portrait/name PNG",
+    "headline": "left-aligned oversized navy/gold",
+    "globe": "lower-right supporting role"
+  },
+  "header_layout": {
+    "landscape": {
+      "left": 76,
+      "top": 38,
+      "number_size": [
+        68,
+        68
+      ],
+      "series_font": 28,
+      "topic_font": 32,
+      "signature_right": 76,
+      "signature_top": 40,
+      "signature_width": 210
+    },
+    "portrait": {
+      "left": 60,
+      "top": 40,
+      "number_size": [
+        58,
+        66
+      ],
+      "series_font": 24,
+      "topic_font": 28,
+      "signature_right": 60,
+      "signature_top": 48,
+      "signature_width": 190
+    }
+  },
+  "variable_fields": [
+    "episode",
+    "series",
+    "topic",
+    "footer",
+    "layout",
+    "variants"
+  ],
+  "background_relative_path": "../../../wise-video/assets/background/index.html",
+  "qa": {
+    "reference_three_ratios_opened": true,
+    "rendered_ep10_visual_review": "passed",
+    "full_size_all_three": true,
+    "actual_jpg_phone_thumbnails_all_three": true
+  },
+  "files": {
+    "index.html": "6a4d7a8ec2352695039fd97e933bf4b8b082bc4f9a96f9e32c35d0f14b1e207d",
+    "example-ep10.json": "4d7d14d3f26fe035ed0dc2e7c07d38317c38f2ee220db07c76e7af04e8094c18",
+    "README.md": "7e396ae466255ab6183835237d899ebb3c522a9a85f70ce1eeb4d0ed887dc847"
+  }
+}

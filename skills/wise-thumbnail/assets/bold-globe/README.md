@@ -8,4 +8,4 @@
 - 可替换字段：series、line-a、line-b、claim lead/number/label、scope、note。统计条件紧贴数据。没有真实数值时将claim改为短问句或删除数字强调，不强制每期百分比、胜率、选举或股票内容。
 - `index.html`相对复用`../../../wise-video/assets/background/`；安装时须同时提供wise-video背景资源及其GSAP依赖，固定25秒姿态。复制到新项目后必须重算iframe相对路径；不要依赖已归档本期工程。
 - `manifest.json`记录批准依据、必要依赖和哈希。模板不带本期成图副本或原始录音；文案仅为排版示例。
-- 完整发布默认由Wise Thumbnail统一生成：封面→200–300字简介→最终章节，另附30–40字标题；规则见Skill的references/publish-package.md。
+- 完整发布由Wise Thumbnail统一生成；标题长度、简介、真实章节次序及统一文案保存规则，以Skill的references/publish-package.md为准。
