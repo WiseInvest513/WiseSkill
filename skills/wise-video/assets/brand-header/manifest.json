@@ -1,0 +1,16 @@
+{
+  "id": "wise-brand-header-c-approved-v1",
+  "status": "approved-direction-with-requested-size",
+  "evidence": "C 但是要小一些 和我右边的一样大小 不然太大了 后续如果有品牌方的都按照这个来",
+  "scope": "品牌合作视频的两角标识；不是正文或整片批准",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "header_height": 57.37,
+  "files": {
+    "brand-header.html": "b5344aa6f854aee33031fe13bb87e88f807decd0a27ccea5a667b669f4e85406",
+    "README.md": "99bf08e4b7117adea7157533d4fdc0bdc82df688d3a9481e06978db71a6b3bb5",
+    "brand-header.css": "b231df0fdc2e70b892cabe5ed7afd0253ca635b355c24eba5618bd0b2246abb0"
+  }
+}

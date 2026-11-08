@@ -1,0 +1,6 @@
+.brand-header-c{position:absolute;left:76px;top:30px;z-index:30;display:flex;align-items:center;gap:14px;height:57.37px;padding:8px 16px 8px 10px;box-sizing:border-box;white-space:nowrap;background:rgba(255,255,255,.92);border:1px solid #e3ded2;border-radius:6px;box-shadow:0 3px 10px #233d4d08;color:#20354b;font-family:Wise,sans-serif}
+.brand-header-c .bh-brand{display:flex;align-items:center;gap:8px;color:#101212;font-size:25px;line-height:1}
+.brand-header-c .bh-logo{position:relative;width:32.36px;height:32.36px;overflow:hidden;flex:none}
+.brand-header-c .bh-logo img{position:absolute;width:43.147px;height:43.147px;max-width:none;left:-5.393px;top:-5.393px}
+.brand-header-c .bh-divider{height:25.74px;width:1px;flex:none;background:#b69a66}
+.brand-header-c .bh-topic{font-size:23.5px;font-weight:600;line-height:1.2}

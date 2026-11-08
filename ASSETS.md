@@ -7,6 +7,7 @@
 - `skills/wise-video/assets/intro/`：已确认的头像、品牌文字及左移/欢迎语动效。移除了历史开场录音，保留视觉模板。
 - `skills/wise-video/assets/outro/`：已确认的 Telegram 引导、Wise 真实头像和红色大订阅片尾；35.034 秒无声模板，背景从同包 background 目录复用。
 - `skills/wise-video/assets/visual-anchors/`：用户认可的银行、钱包、券商和凭证素材及关系构图参考，用来核对风格与实际显示尺度。
+- `skills/wise-video/assets/brand-header/`：已确认的品牌合作C小角标HTML/CSS及尺寸记录，仅含占位结构；实际品牌标识需按本期准确素材替换，不包含本期操作截图。
 - `skills/wise-editorial-3d/assets/`：来自原视频配图流程的生成素材，用于保持米白、深蓝及少量金色的立体材质风格。
 - `skills/wise-editorial-3d/references/avoid-poster.png`：作者提供的反例，仅供比较构图；不得作为正向生成风格参考。
 - `skills/wise-silver-glass/assets/`：来自 Wise 主站首页与福利页已采用的五张银白玻璃风格参考，保留原始图像；用于核对材质、光线与构图，不代表真实品牌产品、市场表现或服务覆盖范围。
