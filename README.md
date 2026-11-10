@@ -9,7 +9,7 @@ Wise 的个人 AI 工作方法合集：把经过实际使用和迭代的工作�
 | Skill | 适合做什么 | 调用 |
 | --- | --- | --- |
 | [Wise 视频封面与发布配套](skills/wise-thumbnail/SKILL.md) | 第9期顶部布局、大字与右下地球，交付三比例封面；系列约30字标题/简洁简介，产品教程约50字标题/500–600字单段简介，与真实章节统一存入介绍.txt | `$wise-thumbnail` |
-| [WiseVideo](skills/wise-video/SKILL.md) | 读文案/SRT/音频，分析实体和关系，盘点素材，生成语义分镜和动画工程，检查承接、布局与原声同步 | `$wise-video` |
+| [WiseVideo](skills/wise-video/SKILL.md) | 读文案/SRT/音频，分析实体和关系，盘点素材，生成语义分镜和动画工程，检查承接、布局与原声同步；含可失败的系列顶栏、收尾对照、画布居中与句子展示点门禁 | `$wise-video` |
 | [Wise 立体配图](skills/wise-editorial-3d/SKILL.md) | 为文章生成米白、深蓝、少量金色的立体实物配图，让画面解释关系 | `$wise-editorial-3d` |
 | [WiseInvest 企业深度研究](skills/wiseinvest-company-research/SKILL.md) | 从 Wise 的视角理解企业、核验经营与估值、形成判断并撰写深度文章 | `$wiseinvest-company-research` |
 | [WiseInvest 财经写作](skills/wiseinvest-stock-writer/SKILL.md) | 保留 Wise 的观点与口吻，核验事实和数据，撰写短贴、公众号长文、财报分析与合作稿；附写作规则和样本 | `$wiseinvest-stock-writer` |

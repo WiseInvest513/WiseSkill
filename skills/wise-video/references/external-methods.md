@@ -32,3 +32,22 @@
 BBAE 第一阶段技术检查通过后被用户否定审美和表达。可复用失误：用整场对象绑定制造覆盖率、批量复制通用语义字段、同一入场动作充当多数编排、制作备注形成第二字幕、库存建筑替代地理位置、同组主图完成度不一致。
 
 本次不靠增加“丰富/优雅”等形容词解决：先运行设计退化候选扫描，再从新文稿选择代表镜头、制作真实样张、按已接受素材检查、定点修正；将内部审阅与上屏文案分开。结构检查、视觉审阅、运动实测各有结论，不能互相代替。具体品牌、坐标和费用关系留项目，不写成通用镜头模板。
+
+
+## Local motion craft mirrors (2026-11-09)
+
+> Pointers only — do **not** treat these as a second style system. Wise templates + `wise-3d` + frozen background remain authoritative. Borrow motion grammar + self-test, never foreign palettes.
+
+Primary local mirrors under `.agents/skills/_external/` (copied from GitHub clones; see `_external/skill-motion-learning.md`):
+
+| Path | Upstream | Use for |
+| --- | --- | --- |
+| `_external/hyperframes-motion/motion.md` (+ `review.md`, `runtimes.md`, `types/explainer.md`, `types/data.md`, `motion-doctrine/`) | heygen-com/hyperframes `skills/hyperframes/references/` | Caused transitions; ban idle float/breathe as fake motion; ease-by-role; `.motion.json` assertions (`appearsBy` / `keepsMoving` / `staysInFrame`) when HF CLI is available |
+| `_external/explainer-motion/method.md` (+ `SKILL-motion-excerpts.md`, `spatial-components.html`) | mhuot/explainer-video-skill | Relation flows via `strokeDashoffset`; calm 0.4–0.6s pacing; script→audio→timing QA gates |
+| `_external/retention-audit/` | BusyBee animated-explainer-skills (tools only) | Optional beat-gap / overlap auditors after Wise validators are green — **ignore** Kurzgesagt look |
+
+**Deprecated upstream folder name:** `skills/hyperframes-animation/` is gone on heygen main. Older GitHub blob links above that point at `hyperframes-animation/rules/…` are historical; prefer the local `_external/hyperframes-motion/motion.md` mirror.
+
+When motion feels flat or like slides: read [design-to-motion](design-to-motion.md) **and** `_external/hyperframes-motion/motion.md` before changing cues. Do not invent CSS float/breathe loops.
+
+2026-11-10: also `_external/skill-asset-display-learning.md` (sentence display points + @xuanyuancoding method).

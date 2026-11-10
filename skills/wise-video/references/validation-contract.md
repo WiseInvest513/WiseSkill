@@ -46,6 +46,29 @@ coverage每项：caption_id、beat_ids、hold_reason。覆盖本范围每一条�
 
 章牌、定义收束、同级项平衡及“较简单”的关系依据不增设打勾字段：直接用 `sentence_states` 的新增命题、焦点、退场及实际审阅帧验证。原文中一个章节号不等于已经做出章节分隔，原图里有钱也不等于准确表达了当前金额。
 
+
 ## 文字与版式的实际约束
 
 本项目后续新前景设计或版式修复按 [文字角色与稳定版式](typography-layout.md) 建立简短 `layout_contract.json`，引用实际对象、文字角色、组和组件参数，并将共享配置/槽位计算接入生成器。既有计划的结构检查不会验证它；必须测实际DOM及观察关键态，不能把多写字段视为已修好排版。未涉及的历史成片不自动改版。
+
+
+## 版式硬门禁（新语义重建必跑）
+
+新语义重建 / 版式修复在 encode 前必须：
+
+1. 产出并引用 `layout_contract.json`（`layout_mode`、安全框、`sibling_sets`、`allowed_overlaps`、审查时间点、token 哈希）。
+2. 运行 `python3 scripts/audit_layout_hard_gates.py ...`，读取 JSON 的 `status`：**仅 `pass` 才允许 encode**。规则正文见 [版式硬门禁](layout-hard-gates.md)。
+
+`validate_plan.py` / `audit_visual_plan.py` 退出 0 **不能**代替本审计。对确认地球背景的左贴轨、错隐喻（卖出→钱包）、同级不等大、新主张未清退旧层、非预期叠层，一律按硬门禁 FAIL。
+
+
+## 句子展示点与收尾对标（新语义 / 画质重修必跑）
+
+在版式硬门禁之外，encode 代表样片或宣称画面表达完成前还必须：
+
+1. 按 [句子展示点硬门禁](sentence-display-points.md) 为信息性名词/动词绑定 `display_points`（或确保 focus 主体含 prop/img/chart/path）。
+2. 按 [收尾对标](outro-parity.md) 复用 `wise-outro-approved-v1`（至少 signature：头像 + 红色订阅 + 再见），禁止自制告别方框栈。
+3. 运行 `python3 scripts/audit_sentence_display_points.py … --check-outro`，读取 JSON 的 `status`：**仅 `pass` 才允许宣称展示点通过**。
+
+`audit_layout_hard_gates.py` 退出 0 **不能**代替本审计。次级表现形式参考 `@xuanyuancoding`（只吸方法不抄画风）。
+

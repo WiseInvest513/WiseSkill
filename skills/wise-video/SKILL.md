@@ -5,11 +5,7 @@ description: WiseVideo 视频设计与制作的统一流程：将文案、录音
 
 # WiseVideo
 
-这是视频设计与制作的统一入口，可安装到不同项目。用户说“WiseVideo”“用 WiseVideo 设计/制作”或调用 `$wise-video` 时使用本 Skill。内容理解、元素选择与原有素材、字幕、背景和制作检查属于同一流程。文章写作不在本Skill范围内。用户最新决定优先；用户说会提供新内容时，不能默认续做历史视频。
-
-## 运行环境与随包资源
-
-首次安装或换机器使用时，读取 [运行依赖与路径](references/runtime-and-paths.md)。Python 接入/校验工具使用标准库；HTML 编译与最终 MP4 渲染的依赖分开配置。默认定制背景、白底小署名、可选开场和固定片尾随包保存于 `assets/background/`、`assets/intro/`、`assets/outro/`，编译时显式传路径；用户录音和历史成片不随包分发。
+这是本项目的视频设计与制作统一入口。用户说“WiseVideo”“用 WiseVideo 设计/制作”或调用 `$wise-video` 时使用本 Skill。内容理解、元素选择与原有素材、字幕、背景和制作检查属于同一流程。文章写作不在本Skill范围内。用户最新决定优先；用户说会提供新内容时，不能默认续做历史视频。
 
 ## 范围与恢复
 
@@ -20,12 +16,11 @@ description: WiseVideo 视频设计与制作的统一流程：将文案、录音
 
 ## 保存与精简归档
 
-遵循 [目录与精简归档](references/workspace-layout.md)，集中保留原件和模板，将制作中间件与最终导出分开。
+制作、续作与交付时遵循 [目录与精简归档](references/workspace-layout.md)：原始素材和固定模板集中保留，过程文件只在本期工作区，最终视频与SRT进入导出目录；按用户清理授权删除测试和重复中间件。
 
 ## 成本与模型分工
 
 用户要求控制额度、制作长视频或反复迭代时，读取 [制作成本与模型分工](references/cost-controls.md)。先用脚本做机械检查，明确的实现任务用较低成本模型，强模型集中处理语义、关键设计和疑难。按需加载资料、用干净且有边界的委派、复用已确认组件、只复查受影响部分；不降低视觉和验收标准。记录实际可获得的阶段用量，不承诺固定节省比例，也不声称能自行切换主对话模型或清除已带入的历史。
-
 
 ## 仅校对字幕
 
@@ -44,7 +39,7 @@ description: WiseVideo 视频设计与制作的统一流程：将文案、录音
 1. **读完整输入，确定范围。** 明确本次交付、受众、源文稿或字幕范围、已锁定设计。只有选题时方案标为草案；目录和旧项目不能当成已提供的新正文。
 2. **先理解，再匹配库存。** 第一遍仅从原文提取核心命题、内容类型、角色、关系、条件及变化。第二遍才匹配素材和视觉形式。按语义完整句记录本句新增命题、当前焦点、旧元素去留；同一主题中的提问、少走步骤、比较、总括也分别需要可观察的承接。识别正文中的章节切换，保留原编号与层级；相关图片仍在场不等于本句已经表达。分析新内容或诊断生硬画面时必读 [分析与编排](references/analysis-workflow.md)，不要从模板倒推文案。
    **全文概念盘点是前置检查。** 新内容或重做视觉表达时，必读 [概念盘点与表现选择](references/concept-inventory.md)：先提取全文信息性名词与概念，合并别称、保留所有出处；逐项判断文字、准确身份、概念素材、数据图或关系表达。检查素材缺口后再批量制作；每句有文字覆盖不等于视觉表达完成，也不强制每个名词配图。
-3. **做画面设计，不先套布局。** 必读 [视觉设计与迭代](references/visual-direction.md)，按内容选择开场吸引方式、主辅或同级尺度、系列样式、重点揭示和跨句交接。自我介绍前的一两句，尤其前0–10秒，用对象和变化呈现原稿吸引点，不能只显示抽象标题。新前景设计或排版修复同时读 [文字角色与稳定版式](references/typography-layout.md)：先确定文字任务、层级和运动角色，将同级图文组接入共享字号与布局组件，不能只贴标签再自由填坐标。先定主画面与阅读顺序，再选素材和坐标；按全画幅内容区构图，背景装饰不独占正文栏位。查看随附视觉锚点，核对主体、地点与关系表达，缺少相容主图仍算素材缺口；卡片有归组任务时使用，不作为默认镜头。
+3. **做画面设计，不先套布局。** 必读 [视觉设计与迭代](references/visual-direction.md)，按内容选择开场吸引方式、主辅或同级尺度、系列样式、重点揭示和跨句交接。纳斯达克投资系列等栏目必读 [系列顶栏](references/series-chrome.md)，不要沿用背景模板把频道名放在左上角。自我介绍前的一两句，尤其前0–10秒，用对象和变化呈现原稿吸引点，不能只显示抽象标题。新前景设计或排版修复同时读 [文字角色与稳定版式](references/typography-layout.md)：先确定文字任务、层级和运动角色，将同级图文组接入共享字号与布局组件，不能只贴标签再自由填坐标。先定主画面与阅读顺序，再选素材和坐标；按全画幅内容区构图，背景装饰不独占正文栏位。查看随附视觉锚点，核对主体、地点与关系表达，缺少相容主图仍算素材缺口；卡片有归组任务时使用，不作为默认镜头。
 4. **核对真实素材，集中列缺口。** 完整实体清单与素材缺口分开；打开用户供图核对内容与用途。用户优先提供，无法提供的部分按已有明确授权补充。精确品牌标识不得AI仿造；关键身份素材不能静默改成文字。具体授权及登记规则见制作控制。
 5. **把设计落实到同一计划。** 每个重点写具体的理解目标、对象关系、前状态→动作→后状态、保留的屏幕短词及其必要性。批量复制通用 action/acceptance/hold_reason 不算语义分析。按 [计划校验契约](references/validation-contract.md) 写 `semantic_plan.json`，运行 `scripts/validate_plan.py` 和 `scripts/audit_visual_plan.py`；新计划启用后者的 `--require-sentence-states`，核对焦点与保留对象的实际ID，再读复核候选。脚本不验证文字理由或实际画面主次。规划进入、保留、变换、退出与占位，按 [布局与退场](references/layout-and-lifecycle.md) 检查。
 6. **先小范围验证，再扩展整片。** 从本片主要难点选代表镜头，用真实素材和最终背景制作实际 PNG、关键展开态，打开看图并局部修正。静态转动画时按交接规则保留已认可素材与主次，先验证带原声的主要动作，再批量实现。自动授权时内部执行；仅改 Skill 时在隔离目录按授权范围演练。同一计划驱动 cue_sheet/动画；`render_bindings` 连接全部原字幕与具体可见主体，运行 `scripts/validate_handoff.py` 检查 [实际接线](references/handoff-contract.md)。HyperFrames 读取其所需领域Skill，继续现有引擎。
@@ -70,3 +65,32 @@ description: WiseVideo 视频设计与制作的统一流程：将文案、录音
 ## 回复与存档
 
 用户侧简短区分已完成、执行中与待完成，并指向实际产物或检查证据。记录基准不等于已修改视频；草稿或待安装的规则不等于Skill已更新。详细计划与检查证据存本期项目，没有制作就不声称动态效果通过。旧名称 `video-content-director` 仅为兼容入口，规则只维护在 WiseVideo。
+
+## Motion craft recovery (2026-11-09)
+
+When a cut feels flat / like slides: follow `references/design-to-motion.md` and read `.agents/skills/_external/hyperframes-motion/motion.md` before editing cues. Prefer relation path/position/membership changes over inventing CSS float. See `references/external-methods.md` local mirrors.
+
+## Layout hard gates recovery (2026-11-10)
+
+After semantic validate (`validate_plan` / `validate_concepts` / `audit_visual_plan`), **run layout hard gates before encode**: read `references/layout-hard-gates.md`, write/update `layout_contract.json`, then `python3 scripts/audit_layout_hard_gates.py` must report `status=pass`. Earth reserved as a right column / left-justified account boards or chart groups, `center_x` outside **[0.46, 0.54]**, paths covering text, metaphor mismatch (e.g. 卖出→wallet), unequal sibling cards, stale layers after a new claim, or unintended overlap → FAIL; do not encode. Static HTML must be able to fail these even without a live DOM measure.
+
+## Asset display + outro parity recovery (2026-11-10)
+
+Layout hard gates can pass while the film still feels boxy / off-center / weak-ending.
+Also read `references/sentence-display-points.md` and `references/outro-parity.md`, then run:
+
+`python3 scripts/audit_sentence_display_points.py --html … --plan … --inventory … --check-outro`
+
+Must report `status=pass` before claiming visual expression is done. Lone claim/card covering a whole spoken sentence, a leftover identity badge (e.g. lone 纳指100) covering a new spoken sentence with no noun+verb scene, unlabeled leftover strokes that do not express the spoken sell / wait −10% / buyback action, decorative short-label boxes, missing verb action, or farewell text-stack instead of `wise-outro-approved-v1` → FAIL.
+
+Secondary form reference (method only, not look): `@xuanyuancoding` — multi-actor object theater, noun=prop / verb=path, layered scenes. See `_external/skill-asset-display-learning.md`.
+
+## Series chrome + outro objects (2026-11-10)
+
+Nasdaq-series extras are fail-able, not a side comment. Read `references/series-chrome.md` and `references/outro-parity.md`.
+
+- Left: coral-red episode square (`#eb7169`) + two lines `纳斯达克投资 · 第N期` / topic question, from t=0 through outro.
+- Right: `#wise-brand-logo` at about `left:1634px` (never the background-template default `left:76px` for this series).
+- Subscribe-only outros must match published EP10 objects (portrait, WiseInvest, `美股 · 宏观 · 科技 · AI`, `用大白话，讲清楚市场`, red 关注 · 订阅, gold 收藏) — having only a portrait and a red button is not enough.
+- Collab C header stays for brand-partnership videos only; see production-controls.md.
+

@@ -93,6 +93,9 @@
 
 发现失败回到对应层修复，检查受影响动作和相邻转场后再扩展。最终还要从实际编码成片抽帧并播放关键区间，防止浏览器预览与导出结果不同；完整检查要求见 [样片回归](regression-testing.md)。
 
+
+
+另：当 HyperFrames CLI 可用时，在 Wise 语义前/中/后帧之外，对关键主体选择器补 sibling `.motion.json` 断言（`appearsBy` / `keepsMoving` / `staysInFrame`）并跑 `hyperframes check`；把 `motion_frozen` 或仅有 idle float/breathe 当作失败。详见 `_external/hyperframes-motion/motion.md` 与 motion-doctrine：禁止用漂浮假装持续动效。
 ## 6. 把失败写回方法，别把本集坐标写成规则
 
 用户要求持续迭代时，维护简短的“问题 → 原因 → 修改 → 证据 → 适用边界”记录。一次失败可形成一条候选规则；先确认它是否只是实现错误，是否已被现有规则覆盖，再决定补规则、补检查或只修本期代码。
