@@ -1,0 +1,5 @@
+*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden}body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;color:#20354b}#root{position:relative;width:1920px;height:1080px;overflow:hidden}.base,canvas{position:absolute;inset:0;width:1920px;height:1080px;pointer-events:none}#surface{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+#seriesCard{position:absolute;z-index:20;left:76px;top:30px;display:flex;align-items:center;gap:15px;padding:14px 18px 14px 16px;min-height:100px;background:rgba(255,253,248,.92);border:1px solid #eae7df;border-radius:8px;white-space:nowrap}
+#seriesCard .num{display:flex;align-items:center;justify-content:center;flex:none;width:58px;height:58px;background:#eb7169;color:#172735;border-radius:6px;font-size:28px;font-weight:700;line-height:1}
+#seriesCard .series{font-size:24px;color:#596972;line-height:34px;font-weight:600}#seriesCard .topic{font-size:30px;color:#1f3545;line-height:37px;font-weight:700}
+#wise-brand-logo{position:absolute;z-index:20;left:1634px;top:30px;width:210px;height:57.37px;object-fit:contain;border-radius:10%}

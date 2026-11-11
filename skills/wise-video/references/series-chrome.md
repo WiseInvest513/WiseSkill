@@ -1,47 +1,41 @@
 # 系列顶栏（可失败）
 
-纳斯达克投资系列等非品牌合作栏目，必须使用本文件规定的常驻顶栏。这份规矩可以整份带走复用；不要只写「参考栏目约定」。
+纳斯达克投资系列等非品牌合作栏目使用本文件的常驻顶栏。可直接复用随包 [最小模板](../assets/series-chrome/README.md)、[HTML](../assets/series-chrome/index.html)、[CSS](../assets/series-chrome/series-chrome.css) 与 [manifest](../assets/series-chrome/manifest.json)，不需要作者机器的历史工程。
 
-权威对照：已导出成片 `exports/纳斯达克投资系列/第10期-加息买入与降息卖出/nasdaq-ep10-complete-v1.mp4`（第 10 期是该系列最完整的顶栏与收尾样本）。颜色以该成片左上红色方块实取样为准。
+[已批准 EP10 顶部参考帧](../assets/series-chrome/source-ep10-header.jpg) 是权威外观依据；[本包实际渲染](../assets/series-chrome/reference-rendered.jpg) 提供可重现对照。原成片哈希和取帧秒数随 manifest 保存，整片和旁白不分发。原成片为**红底深色期数**；早期规则里的“白字”和偏小的 54px／18px／24px 配方已按已批准成片与用户红底黑字决定纠正。
 
-## 和另外两套默认的区别（不要跟错）
+## 不同用途的角标
 
-| 来源 | 适用 | 不要拿来做本系列 |
+| 来源 | 用途 | 本系列处理 |
 | --- | --- | --- |
-| `wise-background-approved-v1` 里 `#wise-brand-logo` 默认 `left:76px` | 无系列栏目、或尚未套栏目条的底板 | 会把「@Wise Invest」放到左上角，本系列这是错误位置 |
-| [C 小角标](../assets/brand-header/README.md) / `wise-brand-header-c-approved-v1` | **品牌合作**视频：左上合作方标识，右上原署名 | [制作控制](production-controls.md) 写明不覆盖非合作系列的栏目约定 |
-| 本文件 | 纳斯达克投资系列（及同样栏目结构的续期） | — |
-
-自测只查「有没有 logo」「有没有数字 10」不够。频道名在左边、期数方块是藏青色、文案写成「纳指 · 标普投资系列」都算失败。
+| `assets/background/` 中默认 `#wise-brand-logo left:76px` | 无系列栏目底板 | 系列将原署名移至右上，不保留左上副本 |
+| [C 小角标](../assets/brand-header/README.md) | 品牌合作视频 | 不替代非合作系列栏目卡 |
+| [series-chrome](../assets/series-chrome/README.md) | 纳斯达克投资系列及同结构续期 | 左上期数／系列／主题，右上原署名 |
 
 ## 强制配方（1920×1080）
 
-从 `t=0` 起常驻，贯穿正文和收尾，不随转场淡出，也不等到十几秒再出现。
+从 `t=0` 起常驻，贯穿正文、章节与收尾。不延迟出现、不随场景转场退出。
 
-### 左上：系列卡 `#seriesCard` / `.series-card`
+- `#seriesCard`：左76、上30，横排，半透明暖白底，约100px高，圆角8px；宽随主题变化，EP10约410–430px。外层 padding `14px 18px 14px 16px`，内部 gap15px。
+- `.num`：58×58、圆角6px、珊瑚红 **#eb7169** 底、深色 **#172735** 字、28px／700。禁止藏青底或将合作方标识当期数。
+- `.series`：24px／600、#596972，`纳斯达克投资 · 第N期`。
+- `.topic`：30px／700、#1f3545，本期主题问句；EP10例 `加息买入，降息卖出？`。两行明确分级，不合并成一句“纳指 · 标普投资系列”。
+- `#wise-brand-logo`：随包原署名图，左1634、上30、210×57.37，白底10%圆角。两角顶部对齐；系列卡和原署名不强行等高。
 
-- 位置：`left:76px; top:30px`
-- 容器：横向 flex；内边距 `11px 18px 11px 12px`；背景 `rgba(255,253,248,.92)`；圆角 `16px`
-- 期数方块 `.num`：`54×54`，圆角 `12px`，背景 **`#eb7169`**（第 10 期成片红块内取样 rgb(235,113,105)），白字期数（如 `10`），字号约 26 / 字重 700。禁止用藏青 `#1f3b57` 或合作角标的深蓝块冒充。
-- 第一行 `.series`：18px / `#6e8191` / 500 — `纳斯达克投资 · 第N期`
-- 第二行 `.topic`：24px / `#1f3b57` / 700 — 本期主题问句，例如第 10 期：`加息买入，降息卖出？`
+换期只替换期数和主题文案；保持结构与配色。新字体或较长主题需要重新检查实际字形和边界，不把当前示例宽度写死。`setSeriesChrome()` 使用 textContent 安全替换。
 
-换期时只改期数和主题句，不改左右结构、红色和两行层级。
-
-### 右上：频道署名 `#wise-brand-logo`
-
-- 素材：`wise-invest-logo.png`（白底小署名，「@Wise Invest」+ 头像）
-- 位置：`left:1634px`（即 `1920 − 76 − 210`）；`top:32px`；`210×57.37`
-- 与左上系列卡顶部对齐、视觉同高。压在地球背景右上角可以，不要再挪回左边。
-
-## FAIL
+## 失败条件
 
 | code | 条件 |
 | --- | --- |
-| `series_chrome_logo_left` | 非合作系列把 `#wise-brand-logo` 放在左边（例如 `left≈76`），而不是右上约 `1634` |
-| `series_chrome_num_navy` | 期数方块背景是藏青 / `#1f3b57` 等，而不是系列红 `#eb7169` |
-| `series_chrome_copy_wrong` | 两行不是「纳斯达克投资 · 第N期」+ 本期主题问句（例如写成「纳指 · 标普投资系列 · …」单行） |
-| `series_chrome_missing_t0` | 系列卡在开场不在，或十几秒后才淡入 |
-| `series_chrome_missing_in_outro` | 收尾时顶栏消失 |
+| `series_chrome_logo_left` | 原频道署名仍在左边或不在约定右上位置 |
+| `series_chrome_signature_image_missing` | 右上原署名未加载 |
+| `series_chrome_num_navy` | 期数方块不是系列珊瑚红 #eb7169 |
+| `series_chrome_num_text_wrong` | 期数不是与已批准成片相符的深色字 |
+| `series_chrome_copy_wrong` | 不是规定系列名＋本期主题两行，或期数不一致 |
+| `series_chrome_missing_t0` | 开场无系列卡，或延迟进入 |
+| `series_chrome_missing_in_outro` | 收尾丢失系列卡／原署名 |
 
-检查开场约 4 秒、自我介绍、以及收尾仍在。位置和颜色以已发布该系列成片为准，不以背景模板默认值为准。
+`data-wise-series-chrome` 与各语义属性只帮助检查器定位，不代表可见性证明。实际 DOM 采样核对图片加载、祖先透明度、颜色、几何与矩形裁剪；实际绘制遮挡、蒙版和叠层仍须看渲染帧；没有采样证据不能宣称通过。至少覆盖0秒、约4秒、自我介绍、正文和收尾；仍需打开真实渲染帧与源参考比较。
+
+地球是背景装饰，不给正文预留右栏；本文件不改变封面“主体不遮地球”的独立要求。

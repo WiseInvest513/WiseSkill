@@ -57,18 +57,19 @@ coverage每项：caption_id、beat_ids、hold_reason。覆盖本范围每一条�
 新语义重建 / 版式修复在 encode 前必须：
 
 1. 产出并引用 `layout_contract.json`（`layout_mode`、安全框、`sibling_sets`、`allowed_overlaps`、审查时间点、token 哈希）。
-2. 运行 `python3 scripts/audit_layout_hard_gates.py ...`，读取 JSON 的 `status`：**仅 `pass` 才允许 encode**。规则正文见 [版式硬门禁](layout-hard-gates.md)。
+2. 按 [运行路径](runtime-and-paths.md) 调用 `python3 "$SKILL_DIR/scripts/audit_layout_hard_gates.py"`，参数指向本期实际合同、计划和实现，读取 JSON 的 `status`：**仅 `pass` 才满足此编码前门禁**。规则正文见 [版式硬门禁](layout-hard-gates.md)；其他验收与实际画面失败仍需分别处理。
 
 `validate_plan.py` / `audit_visual_plan.py` 退出 0 **不能**代替本审计。对确认地球背景的左贴轨、错隐喻（卖出→钱包）、同级不等大、新主张未清退旧层、非预期叠层，一律按硬门禁 FAIL。
 
 
 ## 句子展示点与收尾对标（新语义 / 画质重修必跑）
 
-在版式硬门禁之外，encode 代表样片或宣称画面表达完成前还必须：
+在版式硬门禁之外，编码新语义/画质重修的代表样片或完整片前，按本次实际内容范围检查：
 
-1. 按 [句子展示点硬门禁](sentence-display-points.md) 为信息性名词/动词绑定 `display_points`（或确保 focus 主体含 prop/img/chart/path）。
-2. 按 [收尾对标](outro-parity.md) 复用 `wise-outro-approved-v1`（至少 signature：头像 + 红色订阅 + 再见），禁止自制告别方框栈。
-3. 运行 `python3 scripts/audit_sentence_display_points.py … --check-outro`，读取 JSON 的 `status`：**仅 `pass` 才允许宣称展示点通过**。
+1. 按 [句子展示点硬门禁](sentence-display-points.md) 为信息性名词/动词绑定 `display_points`，检查该句实际可见的道具、图像、数据与关系，以及动词的前/中/后状态。旧工程的 focus 推断不能代替真实画面证据。
+2. 调用 `python3 "$SKILL_DIR/scripts/audit_sentence_display_points.py"`，按指南传本期 HTML、计划、概念清单、cue 和字幕。**仅 `status=pass` 才满足已请求的自动门禁**；仍需实际语义、审美、动态和原声检查，不以文件有 ID 或 class 宣称表达完成。
+3. 有系列顶栏时按 [系列顶栏](series-chrome.md) 检查本范围的常驻状态。只有本次范围包含片尾时才加 `--check-outro` 及其所需 DOM 证据、实际取样时间；原文有电报引导时按 [收尾对标](outro-parity.md) 选择 community 分支并完成对应检查。局部样片没有片尾则不加该检查，也不擅自补片尾来凑验收。
+4. 片尾按真实话术选用随包的原社区版或关注订阅收藏版。完整对象、必要文字、图形和出现时段以 [收尾对标](outro-parity.md) 为准；只有头像＋红按钮＋再见不构成系列完整配方。subscribe-only 原声省略口号或支持句时，用 [显式对象策略](automation-coverage.md) 的 `--outro-policy` 声明对应理由；默认仍检查完整集合，核心头像、话题行、订阅、收藏与再见不因此减少。禁止自制告别方框栈，模板时序不覆盖本期原音频。
 
-`audit_layout_hard_gates.py` 退出 0 **不能**代替本审计。次级表现形式参考 `@xuanyuancoding`（只吸方法不抄画风）。
+`audit_layout_hard_gates.py` 退出 0 **不能**代替本审计。缺必需证据的 `not_checked` 不能写为通过；工具覆盖范围和 DOM 证据要求见 [自动检查覆盖](automation-coverage.md)。已授权的制作继续内部检查，不新增逐步审批；只改规则或静态图时不自动渲染视频。
 

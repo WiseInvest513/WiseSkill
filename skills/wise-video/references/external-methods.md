@@ -2,7 +2,9 @@
 
 > 历史验证说明：文中的旧测试项目仅是当时的验证记录；原工作区已按用户要求精简归档，这些工程不随包提供，也不是运行依赖。新内容在本期工作区重新验证。
 
-本Skill统一维护本项目的视频流程。以下是参考方法，不是新的调用入口，也不把外部默认风格、权限或审批要求带入本项目。
+本Skill统一维护视频流程。执行所需方法已随包提供：[素材展示](asset-display-methods.md)、[动作方法](motion-methods.md)、[设计到动效](design-to-motion.md)。无需克隆外部仓库或安装额外 Skill；以下链接只说明历史学习来源，外链不可用不阻断制作。外部默认风格、权限或审批要求不带入本流程。
+
+本文及上述指南是针对 Wise 制作任务重新编写的决策方法，不随包复制上游完整文档、代码、视频或素材。引用不等于取得第三方素材使用许可；如需使用具体代码或资产，另核实其来源、许可和本次授权。
 
 - [HyperFrames Beat Direction](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-creative/references/beat-direction.md)：先明确观众要理解的变化，再让对象承担动作。
 - [HyperFrames Video Composition](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-creative/references/video-composition.md) 与 [Remotion Video Layout](https://github.com/remotion-dev/skills/blob/main/skills/remotion-best-practices/remotion-create/video-layout.md)：建立观看主次，按可见主体而非盒子决定尺度。保留原有引擎。
@@ -34,20 +36,17 @@ BBAE 第一阶段技术检查通过后被用户否定审美和表达。可复用
 本次不靠增加“丰富/优雅”等形容词解决：先运行设计退化候选扫描，再从新文稿选择代表镜头、制作真实样张、按已接受素材检查、定点修正；将内部审阅与上屏文案分开。结构检查、视觉审阅、运动实测各有结论，不能互相代替。具体品牌、坐标和费用关系留项目，不写成通用镜头模板。
 
 
-## Local motion craft mirrors (2026-11-09)
+## 2026-11 的方法整理与可选来源
 
-> Pointers only — do **not** treat these as a second style system. Wise templates + `wise-3d` + frozen background remain authoritative. Borrow motion grammar + self-test, never foreign palettes.
+下面是当时参考资料中的方法方向，不声称链接仍对应当前最新版。上方具体文档路径也属于历史归因；目录变化时可从项目首页查找，执行本 Skill 不需要打开它们。
 
-Primary local mirrors under `.agents/skills/_external/` (copied from GitHub clones; see `_external/skill-motion-learning.md`):
-
-| Path | Upstream | Use for |
+| 可选来源 | 吸收的判断方法 | 随包执行入口 |
 | --- | --- | --- |
-| `_external/hyperframes-motion/motion.md` (+ `review.md`, `runtimes.md`, `types/explainer.md`, `types/data.md`, `motion-doctrine/`) | heygen-com/hyperframes `skills/hyperframes/references/` | Caused transitions; ban idle float/breathe as fake motion; ease-by-role; `.motion.json` assertions (`appearsBy` / `keepsMoving` / `staysInFrame`) when HF CLI is available |
-| `_external/explainer-motion/method.md` (+ `SKILL-motion-excerpts.md`, `spatial-components.html`) | mhuot/explainer-video-skill | Relation flows via `strokeDashoffset`; calm 0.4–0.6s pacing; script→audio→timing QA gates |
-| `_external/retention-audit/` | BusyBee animated-explainer-skills (tools only) | Optional beat-gap / overlap auditors after Wise validators are green — **ignore** Kurzgesagt look |
+| [HyperFrames](https://github.com/heygen-com/hyperframes) 的 motion / review 方法 | 转场有场内依据，按角色选缓动，拒绝以漂浮代替语义变化，检查实际前中后态 | [动作方法](motion-methods.md) |
+| [mhuot/explainer-video-skill](https://github.com/mhuot/explainer-video-skill) | 路径表达流向；稿件、声音和画面使用同一时间依据 | [设计到动效](design-to-motion.md) |
+| [remotion-code-motion-explainer](https://github.com/vibe-motion/remotion-code-motion-explainer) | 语句中的对象、动作、数量和关系分别承担可见任务，保留对象身份 | [素材展示](asset-display-methods.md) |
+| [OpenMontage](https://github.com/OpenMontageInc/OpenMontage) 的 scene / asset director 方法 | 在制作前列具体素材需要，检查文字到画面的缺口 | [概念盘点](concept-inventory.md)、[素材展示](asset-display-methods.md) |
+| [Clueso Skills](https://github.com/clueso-ai/skills) 的 explain-it-simply / end-card 方法 | 按比较、过程、数据等内容选择处理方式，片尾围绕清楚的行动 | [素材展示](asset-display-methods.md)、[收尾对标](outro-parity.md) |
+| [轩辕的编程宇宙](https://www.youtube.com/@xuanyuancoding/videos)，用户指定的次级形式参考 | 同句多个对象按需配合、关系路径、分层说明、跨句保留同一机制 | [素材展示](asset-display-methods.md)、[句子展示点](sentence-display-points.md) |
 
-**Deprecated upstream folder name:** `skills/hyperframes-animation/` is gone on heygen main. Older GitHub blob links above that point at `hyperframes-animation/rules/…` are historical; prefer the local `_external/hyperframes-motion/motion.md` mirror.
-
-When motion feels flat or like slides: read [design-to-motion](design-to-motion.md) **and** `_external/hyperframes-motion/motion.md` before changing cues. Do not invent CSS float/breathe loops.
-
-2026-11-10: also `_external/skill-asset-display-learning.md` (sentence display points + @xuanyuancoding method).
+借鉴结构，不迁移第三方调色、角色、材质或预设。使用 Wise 模板时保持其米白、深蓝、金色与已确认素材；已有其他风格时延续该项目决定。任何来源都不能覆盖用户最新范围、原声完整性和本期事实边界。

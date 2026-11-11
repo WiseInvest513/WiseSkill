@@ -2,9 +2,9 @@
 
 语义校验过了也不算版式过关。新语义重建 **encode 前** 必须：
 
-1. 写/更新 `layout_contract.json`（`layout_mode`、安全框、`sibling_sets`、`allowed_overlaps`、生命周期清退表、审查时间点）
-2. 跑 `python3 .agents/skills/wise-video/scripts/audit_layout_hard_gates.py ...`
-3. 报告 `status=pass` 且 `encode_allowed=true` 才能出片
+1. 写/更新 `layout_contract.json`（`layout_mode`、安全框、`sibling_sets`、`allowed_overlaps`、生命周期清退表、审查时间点）。
+2. 按 [运行路径](runtime-and-paths.md) 设置 `SKILL_DIR` 与 `EP`，调用 `python3 "$SKILL_DIR/scripts/audit_layout_hard_gates.py"`；输入参数指向本期实际 HTML、计划、合同和 cue，不依赖当前工作目录或作者路径。具体检查见 [版式硬门禁](layout-hard-gates.md)。
+3. 报告 `status=pass` 且 `encode_allowed=true` 只表示此门禁满足；实际帧发现的问题仍须修复，不能当作语义、审美或声音同步通过。
 
 ## 六条硬 FAIL
 
@@ -17,16 +17,10 @@
 | 生命周期清场 | 新主主张（如 +25bp 利率条）上场后，已完成的政策锚/标尺层仍可见 → FAIL |
 | 图文共展 | 文字只落在本集团槽，不得压别组外包 |
 
-细则：`.agents/skills/wise-video/references/layout-hard-gates.md`
+新计划和画质重修同时按 [句子展示点](sentence-display-points.md) 检查名词/动词的实际落点。系列顶栏按 [系列顶栏](series-chrome.md) 检查；仅当本次范围包含片尾时，按 [收尾对标](outro-parity.md) 加片尾检查。局部样片不为审计擅加片尾。DOM 证据要求与未检查状态见 [自动检查覆盖](automation-coverage.md)。
 
-## 基线证明（semantic-v2，已知坏片）
+## 历史失败说明
 
-对 `preview-60s-semantic-v2` 的 composition 抽检 `t=4.8 / 26.5 / 35.5 / 54.5`：
+作者历史样片曾在语义结构通过后检出版式失败：左偏、非预期重叠、同级尺度不一致、卖出/回撤误用钱包、主张切换后旧层未退场。该记录说明这些门禁为何存在，不是新安装已执行的证明，也不要求取得历史工程。
 
-- 报告：`projects/2026-11-09-grokbot-aview-parity-test/qa/layout-hard-gates-baseline-fail.json`
-- 结果：`status=fail`，`encode_allowed=false`
-- 已打中：`left_bias_against_earth_bg`、`unintended_overlap`（持有贴步骤）、`sibling_size_mismatch`、`metaphor_mismatch`（卖出/回撤→wallet）、`lifecycle_stale`（25bp 未清退标尺/政策锚）
-
-**下一步（重渲前）**：按硬门禁改 composition / 隐喻 / 生命周期 → 再跑同一审计必须 `pass` → 才 encode。本任务不重渲。
-
-Also run `audit_sentence_display_points.py --check-outro` (box/outro gaps layout gates miss).
+对当前内容从本期 cue 选择稳定态、动作中途和转场时点，修复后检查受影响区间。不要照抄旧片秒数；没有执行的检查记录为未验证。

@@ -1,0 +1,52 @@
+{
+  "id": "wise-thumbnail-ep10-actual-reference-v1",
+  "status": "user-selected-overall-visual-reference",
+  "scope": "Approved EP10 final cover references in three ratios; existing EP09 remains the editable layout source",
+  "evidence": "Latest user direction names EP10 upper-left identity, upper-right signature, covers and final ending as satisfactory and requests them in reusable prompts/structure.",
+  "sources": [
+    {
+      "file": "ep10-cover-16x9.jpg",
+      "ratio": "16x9",
+      "size": [
+        1920,
+        1080
+      ],
+      "source_title": "Approved Nasdaq investment series EP10 final cover",
+      "source_filename": "纳指投资第十期-加息买纳指-16比9.jpg",
+      "source_sha256": "e8ccc183543bef8079aef9ed8cf35bdf8cfc64a073a7227626dec0aa98fab0c3",
+      "transfer": "byte-for-byte; not rerendered or recompressed"
+    },
+    {
+      "file": "ep10-cover-3x4.jpg",
+      "ratio": "3x4",
+      "size": [
+        1200,
+        1600
+      ],
+      "source_title": "Approved Nasdaq investment series EP10 final cover",
+      "source_filename": "纳指投资第十期-加息买纳指-3比4.jpg",
+      "source_sha256": "d092cdf15d663e56d1c073b075a432eb1bd95e5f2421c03914f39d31c129662d",
+      "transfer": "byte-for-byte; not rerendered or recompressed"
+    },
+    {
+      "file": "ep10-cover-4x3.jpg",
+      "ratio": "4x3",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_title": "Approved Nasdaq investment series EP10 final cover",
+      "source_filename": "纳指投资第十期-加息买纳指-4比3.jpg",
+      "source_sha256": "f4282221b7e481b28995d316dd0cebbd658aa3e6bc2aee2eb6e42537f90bf46f",
+      "transfer": "byte-for-byte; not rerendered or recompressed"
+    }
+  ],
+  "fonts_included": false,
+  "full_video_included": false,
+  "files": {
+    "README.md": "16051f2f8a1b92c729b9519c1037200c0faf6ef540e0cbb10a33e801a3d6eb35",
+    "ep10-cover-16x9.jpg": "e8ccc183543bef8079aef9ed8cf35bdf8cfc64a073a7227626dec0aa98fab0c3",
+    "ep10-cover-3x4.jpg": "d092cdf15d663e56d1c073b075a432eb1bd95e5f2421c03914f39d31c129662d",
+    "ep10-cover-4x3.jpg": "f4282221b7e481b28995d316dd0cebbd658aa3e6bc2aee2eb6e42537f90bf46f"
+  }
+}

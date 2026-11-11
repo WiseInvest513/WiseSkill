@@ -134,11 +134,17 @@ for(const [id,actions] of groups){
 }
 function paint(t){
  for(const {node,byProp} of tracks){const values={};for(const [key,tr] of Object.entries(byProp))values[key]=sample(tr.events,t,tr.base);gsap.set(node,values);}
+ const local=(t-sourceStart)/1000;
+ for(const node of document.querySelectorAll('.clip[data-start][data-duration]')){
+  const begin=Number(node.dataset.start),end=begin+Number(node.dataset.duration);
+  node.style.visibility=local>=begin&&local<end?'visible':'hidden';
+ }
  if(window.__backgroundDraw)window.__backgroundDraw(t/1000);
 }
 const clock={t:sourceStart};const tl=gsap.timeline({paused:true});
 tl.to(clock,{t:sourceStart+sourceDuration,duration:sourceDuration/1000,ease:'none',onUpdate:()=>paint(clock.t)},0);
 paint(sourceStart);window.__timelines=window.__timelines||{};window.__timelines['srt-video']=tl;
+window.renderAt=(seconds)=>{const local=Math.max(0,Math.min(sourceDuration/1000,seconds));tl.pause();tl.time(local,false);paint(sourceStart+local*1000);};
 window.__renderPlan={sourceStartMs:sourceStart,durationMs:sourceDuration,cues};
 '''
 

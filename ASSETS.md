@@ -2,6 +2,12 @@
 
 本包按作者要求保留个人视觉资产：
 
+- `skills/wise-thumbnail/assets/ep10-reference/`：用户最新确认的第10期三比例封面实图；保留EP09可编辑模板来源，分开记录参考与模板，不复制历史命题到新期。
+
+- `skills/wise-video/assets/library/`：30个精选可复用概念物件与语义/币种限制目录，不依赖原制作工程；不代表准确品牌身份或实际产品。
+- `skills/wise-video/assets/series-chrome/`、`signature-outro/`、`chapter/`：可运行的系列顶栏、纯订阅片尾和YouTube章节源，附真实渲染图、批准成片局部对照帧与哈希。来源成片不随包提供，源帧仅供对标，不能当新片字幕。
+
+
 - `skills/wise-thumbnail/assets/round-globe/`：已确认的左侧圆体大字封面排版源，相对复用wise-video背景；系统Yuanti SC字体不打包，运行依赖按仓库说明准备。
 - `skills/wise-video/assets/background/`：已确认的动态背景代码与底图、地球纹理、Wise 小署名。原版代码与图片哈希记录在该目录 manifest；未包含历史成片或正文截图。
 - `skills/wise-video/assets/intro/`：已确认的头像、品牌文字及左移/欢迎语动效。移除了历史开场录音，保留视觉模板。

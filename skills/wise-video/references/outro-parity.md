@@ -1,44 +1,48 @@
 # 收尾对标（可失败）
 
-片尾必须对标已确认模板与已发布成片，不得另起一套「告别方框栈」。
+片尾按实际口播选择已确认模板，不能用告别文字方框栈代替真实物件。
 
-## 权威来源
+## 随包权威来源
 
-1. `assets/templates/wise-outro-approved-v1`（README / manifest / index.html）
-2. 已导出系列成片末段（如 `exports/纳斯达克投资系列/第09期…`、`第10期…`）
-3. 学习简报：`.agents/skills/_external/skill-asset-display-learning.md`
+1. [关注订阅收藏版](../assets/signature-outro/README.md)：最小可运行 HTML／CSS／JS、真实头像相对引用、已批准 EP10 的支持／告别参考帧、当前模板实际渲染及 SHA256。
+2. [原社区版](../assets/outro/README.md)：保留电报交流→signature 的原模板；按本期话术选择。
+3. [系列常驻顶栏](series-chrome.md)：独立于场景，贯穿片尾。
 
-## 强制配方
+无需取得历史整片才可复用。参考帧用于确认视觉，示例时间用于理解编排，都不替代新录音与字幕的实际接线。
 
-**若口播含电报/交流群引导**：完整走 community → signature（模板默认 ~35s 时序，按本期音频对齐）。
+## 按口播选择
 
-**若口播只有关注订阅/下期再见**：仍必须使用 signature 段的核心物件，并优先对标已发布系列成片（第 10 期是完整样本），不要只做到「有肖像、有红按钮」就视为通过：
+**含电报／交流群引导**：使用 community→signature 分支，原约35秒时序按本期音频重对齐。不要把无关群截图强加给仅含订阅的结尾。
 
-- 真实头像 `portrait.png`（标签/兴趣块不得压在头像上）
-- WiseInvest 品牌字
-- 话题行纯文字：`美股 · 宏观 · 科技 · AI`（不要用一排兴趣胶囊贴在头像周围）
-- 口号：`用大白话，讲清楚市场`（口播讲到讲清楚市场时出现）
-- **大红色**「关注 · 订阅」按钮，带播放三角形
-- 按钮右侧金色书签「收藏」（第 10 期用收藏，不是模板默认铃铛；口播没有铃铛/电报就不要改成铃铛或电报段）
-- 支持句：`你的支持，是持续更新的动力`
-- 「我们下期再见」落在品牌构图上
-- 系列顶栏在收尾仍然可见，见 [系列顶栏](series-chrome.md)
+**只有关注订阅／收藏／下期再见**：使用 `assets/signature-outro/` 的 EP10 分支，依次保留：
 
-`wise-outro-approved-v1` 里的电报群、兴趣胶囊、定投三连、铃铛、十年前→现在，只在口播真正讲到时使用，不能拿模板默认时间轴覆盖第 10 期这类「关注/收藏/下期再见」口播。
+- 真实头像 `../outro/assets/portrait.png`，原图原裁切；兴趣标签不得覆盖头像。
+- WiseInvest 品牌字与纯文字 `美股 · 宏观 · 科技 · AI`；不是环绕人像的兴趣胶囊。
+- `用大白话，讲清楚市场`：口播讲到相应意思才出现；没有这段时设置 `sloganEnabled:false` 并收紧时序。
+- 大红色 `关注 · 订阅` 主按钮，带白色播放三角。
+- 右侧金色书签与 `收藏`；收藏路线不能拿铃铛冒充。
+- 支持句 `你的支持，是持续更新的动力`，在实际支持话术出现。
+- 支持句退出，再把 `我们下期再见` 放在品牌构图上；肖像、话题行、订阅／收藏与系列顶栏仍保留。
 
-**下期预告**：用具体素材表达下期主题。第 10 期样本是红色播放图标 + 具体标题（如 `下一期 · 同样投资纳指，汇率怎样影响收益?`）+ Nasdaq 标识 + `纳指100`。禁止仅一张下一期文字卡。
+口号、支持句和告别句有各自时段，不要求所有物件同帧挤在一起。示例 `renderAt(2 / 6.8 / 10.8 / 13.5)` 分别检查身份、口号、支持、告别。`configureSignature()` 按新录音修改进入／退出时点，不以原 EP10 的14.167秒覆盖新音轨。
 
-## FAIL
+审计默认要求完整集合。实际口播省略口号或支持句时，还须在两个审计入口使用 `--outro-policy`，按 [自动检查覆盖](automation-coverage.md) 的严格 JSON 格式记录省略理由；单独设置 `sloganEnabled:false` 不会自动免除门禁。策略只允许这两句，不免除头像、品牌、话题行、订阅、收藏或再见。当前模板没有 `supportEnabled`，支持句省略应在本期工程样式与 cue 中实现并重采样，不改批准模板。
+
+原社区版的电报、兴趣胶囊、定投三连、铃铛、十年前→现在，只在实际口播包含时使用。
+
+**下期预告**在 signature 前独立编排：使用具体主题素材。EP10的已批准方案为红色播放标识＋具体标题＋Nasdaq标识和纳指100对象；下一期换主题后重新盘点实体，不能只留一张预告文字卡，也不能照搬纳指身份去讲不相关主题。
+
+## 失败条件
 
 | code | 条件 |
 | --- | --- |
-| `outro_template_missing` | 成片收尾 HTML/合成未引用或未复用 `wise-outro-approved-v1` 的关键节点（portrait / subscribe / bye），却用自制 claim 栈冒充 |
-| `outro_missing_red_subscribe` | 口播要求关注/订阅，但画面无红色订阅主按钮 |
-| `outro_missing_portrait` | signature 段无真实头像 |
-| `outro_box_stack_farewell` | 收尾仅有多层文本方框（我是…/欢迎关注…/下期再见）而无模板物件 |
-| `next_ep_text_only` | 下期预告句只有文字卡，无主题道具 |
-| `outro_missing_topics_line` | 第 10 期这类收尾缺少「美股 · 宏观 · 科技 · AI」文字行 |
-| `outro_bell_instead_of_bookmark` | 口播是收藏/订阅路线，画面却只用模板铃铛、没有「收藏」 |
-| `outro_interest_chips_on_portrait` | 兴趣胶囊压在肖像上 |
+| `outro_template_missing` | 未复用模板关键物件或等价的已批准结构，用文字栈冒充 |
+| `outro_missing_red_subscribe` | 订阅话术对应时段没有可见的大红订阅主按钮 |
+| `outro_missing_portrait` | signature 段没有已加载、可见的真实头像 |
+| `outro_box_stack_farewell` | 告别只有多层文字框，无真实模板物件 |
+| `next_ep_text_only` | 下期预告没有主题对象 |
+| `outro_missing_topics_line` | 此类 signature 缺少纯文字话题行 |
+| `outro_bell_instead_of_bookmark` | 收藏话术配铃铛而非金色书签／收藏 |
+| `outro_interest_chips_on_portrait` | 兴趣胶囊压到肖像 |
 
-`audit_sentence_display_points.py --check-outro` 扫描上述模式。有系列栏目时同时按 [系列顶栏](series-chrome.md) 检查左上红色期数卡和右上署名。
+`audit_sentence_display_points.py --check-outro` 是静态候选扫描，不能仅凭类名、ID或源码里出现“收藏”判定画面通过。还需真实渲染 DOM 证据：有效透明度、图片加载、边界、SVG 路径及出现／退出时点。矩形裁剪可以自动检查，实际绘制遮挡、蒙版与图形审美仍须看渲染帧。采样结果只对所查时点负责；语义、审美、完整动态与原声同步分别记录。没有浏览器采样证据时是未检查，不是 pass。

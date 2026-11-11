@@ -5,7 +5,11 @@ description: WiseVideo 视频设计与制作的统一流程：将文案、录音
 
 # WiseVideo
 
-这是本项目的视频设计与制作统一入口。用户说“WiseVideo”“用 WiseVideo 设计/制作”或调用 `$wise-video` 时使用本 Skill。内容理解、元素选择与原有素材、字幕、背景和制作检查属于同一流程。文章写作不在本Skill范围内。用户最新决定优先；用户说会提供新内容时，不能默认续做历史视频。
+这是 Wise 视频设计与制作的统一入口。用户说“WiseVideo”“用 WiseVideo 设计/制作”或调用 `$wise-video` 时使用本 Skill。内容理解、元素选择与原有素材、字幕、背景和制作检查属于同一流程。文章写作不在本Skill范围内。用户最新决定优先；用户说会提供新内容时，不能默认续做历史视频。
+
+## 系列视觉基准
+
+纳斯达克系列先读 [第10期完整视觉基准](references/approved-series-profile.md)，打开其中顶栏、头像、三比例封面与片尾参考，再实现本期内容；不要依赖历史聊天猜样式。
 
 ## 范围与恢复
 
@@ -13,6 +17,8 @@ description: WiseVideo 视频设计与制作的统一流程：将文案、录音
 - 只要求分析或静态图：交付该范围，不自行导出视频。
 - 要求制作：分析、检查计划、实现、验收按下面顺序执行，已授权操作不重复询问。
 - 每次恢复先读本期状态与批准记录，以用户选定版本作为修改基准，不能直接使用最近生成的试稿。项目路径、背景、原声及素材要求统一见 [制作控制](references/production-controls.md)，开始项目工作时必读；局部修改按其中的增量修改约定执行。
+
+首次安装、换机器或执行脚本前读 [运行依赖与路径](references/runtime-and-paths.md)：`SKILL_DIR` 是包含本文件的安装目录，`EP` 是本期工作目录。包内 `references/`、`scripts/`、`assets/` 相对 Skill 根目录；输入、计划和输出相对本期工作目录。执行示例用 `python3 "$SKILL_DIR/scripts/脚本.py"`，文件参数用带引号的真实路径。核心方法和模板随包提供，不要求作者工作区或外部 Skill；可选上游归因见 [外部方法](references/external-methods.md)。
 
 ## 保存与精简归档
 
@@ -24,7 +30,7 @@ description: WiseVideo 视频设计与制作的统一流程：将文案、录音
 
 ## 仅校对字幕
 
-用户只要求SRT对标时，停留在文字工作：保留原件和全部时间戳，先运行 `scripts/compare_srt_reference.py SOURCE.srt REFERENCE.txt --out EP/subtitle-diff.json`，理解一次全文后只审差异。脚本忽略标点/空格/大小写，数字写法差异不自动判错；标题、口播增删、合法别称不能强行补回或删除。识别错误与格式规范分开记录，校正版单独导出；核对编号、条数、时间轴与原件哈希。未听音/未核验事实如实记录。此范围不读取概念、视觉、动画、渲染引用，也不启动后续制作。
+用户只要求SRT对标时，停留在文字工作：保留原件和全部时间戳，先运行 `python3 "$SKILL_DIR/scripts/compare_srt_reference.py" "$EP/source.srt" "$EP/reference.txt" --out "$EP/subtitle-diff.json"`（输入路径替换为实际文件），理解一次全文后只审差异。脚本忽略标点/空格/大小写，数字写法差异不自动判错；标题、口播增删、合法别称不能强行补回或删除。识别错误与格式规范分开记录，校正版单独导出；核对编号、条数、时间轴与原件哈希。未听音/未核验事实如实记录。此范围不读取概念、视觉、动画、渲染引用，也不启动后续制作。
 
 ## SRT 自动制作入口
 
@@ -40,10 +46,10 @@ description: WiseVideo 视频设计与制作的统一流程：将文案、录音
 2. **先理解，再匹配库存。** 第一遍仅从原文提取核心命题、内容类型、角色、关系、条件及变化。第二遍才匹配素材和视觉形式。按语义完整句记录本句新增命题、当前焦点、旧元素去留；同一主题中的提问、少走步骤、比较、总括也分别需要可观察的承接。识别正文中的章节切换，保留原编号与层级；相关图片仍在场不等于本句已经表达。分析新内容或诊断生硬画面时必读 [分析与编排](references/analysis-workflow.md)，不要从模板倒推文案。
    **全文概念盘点是前置检查。** 新内容或重做视觉表达时，必读 [概念盘点与表现选择](references/concept-inventory.md)：先提取全文信息性名词与概念，合并别称、保留所有出处；逐项判断文字、准确身份、概念素材、数据图或关系表达。检查素材缺口后再批量制作；每句有文字覆盖不等于视觉表达完成，也不强制每个名词配图。
 3. **做画面设计，不先套布局。** 必读 [视觉设计与迭代](references/visual-direction.md)，按内容选择开场吸引方式、主辅或同级尺度、系列样式、重点揭示和跨句交接。纳斯达克投资系列等栏目必读 [系列顶栏](references/series-chrome.md)，不要沿用背景模板把频道名放在左上角。自我介绍前的一两句，尤其前0–10秒，用对象和变化呈现原稿吸引点，不能只显示抽象标题。新前景设计或排版修复同时读 [文字角色与稳定版式](references/typography-layout.md)：先确定文字任务、层级和运动角色，将同级图文组接入共享字号与布局组件，不能只贴标签再自由填坐标。先定主画面与阅读顺序，再选素材和坐标；按全画幅内容区构图，背景装饰不独占正文栏位。查看随附视觉锚点，核对主体、地点与关系表达，缺少相容主图仍算素材缺口；卡片有归组任务时使用，不作为默认镜头。
-4. **核对真实素材，集中列缺口。** 完整实体清单与素材缺口分开；打开用户供图核对内容与用途。用户优先提供，无法提供的部分按已有明确授权补充。精确品牌标识不得AI仿造；关键身份素材不能静默改成文字。具体授权及登记规则见制作控制。
-5. **把设计落实到同一计划。** 每个重点写具体的理解目标、对象关系、前状态→动作→后状态、保留的屏幕短词及其必要性。批量复制通用 action/acceptance/hold_reason 不算语义分析。按 [计划校验契约](references/validation-contract.md) 写 `semantic_plan.json`，运行 `scripts/validate_plan.py` 和 `scripts/audit_visual_plan.py`；新计划启用后者的 `--require-sentence-states`，核对焦点与保留对象的实际ID，再读复核候选。脚本不验证文字理由或实际画面主次。规划进入、保留、变换、退出与占位，按 [布局与退场](references/layout-and-lifecycle.md) 检查。
-6. **先小范围验证，再扩展整片。** 从本片主要难点选代表镜头，用真实素材和最终背景制作实际 PNG、关键展开态，打开看图并局部修正。静态转动画时按交接规则保留已认可素材与主次，先验证带原声的主要动作，再批量实现。自动授权时内部执行；仅改 Skill 时在隔离目录按授权范围演练。同一计划驱动 cue_sheet/动画；`render_bindings` 连接全部原字幕与具体可见主体，运行 `scripts/validate_handoff.py` 检查 [实际接线](references/handoff-contract.md)。HyperFrames 读取其所需领域Skill，继续现有引擎。
-7. **按本次授权交付并分层验收。** 静态看可识别性和主次，动态观察动作前/中/后及新旧元素交替区间，检查遮挡和阅读停留，并带旁白检查时机；技术检查文件、音频、布局与时长。分别记录通过、失败或未验证。计划检查、技术检查和语义验收互不替代。
+4. **核对真实素材，集中列缺口。** 按 [素材展示](references/asset-display-methods.md) 把名词、数据和关系落到实际对象，完整实体清单与素材缺口分开；打开用户供图核对内容与用途。用户优先提供，无法提供的部分按已有明确授权补充。精确品牌标识不得AI仿造；关键身份素材不能静默改成文字。项目没有作者素材库时用本期输入、已授权素材或合适的代码图形；缺口不能用无价值方框掩盖。具体授权及登记规则见制作控制。
+5. **把设计落实到同一计划。** 每个重点写具体的理解目标、对象关系、前状态→动作→后状态、保留的屏幕短词及其必要性。动作选择按 [动作方法](references/motion-methods.md)，不要用漂浮、呼吸或重复整页入场替代内容变化。批量复制通用 action/acceptance/hold_reason 不算语义分析。按 [计划校验契约](references/validation-contract.md) 写 `semantic_plan.json`，运行 `validate_plan.py`、`validate_concepts.py` 和 `audit_visual_plan.py`；新计划启用后者的 `--require-sentence-states`，核对焦点与保留对象的实际ID，再读复核候选。脚本不验证文字理由或实际画面主次。规划进入、保留、变换、退出与占位，按 [布局与退场](references/layout-and-lifecycle.md) 检查。
+6. **先验证代表镜头，再扩展整片。** 用真实素材和最终背景制作实际 PNG、关键展开态，打开看图并局部修正。按交接规则保留已认可素材与主次，验证带原声的主要动作；自动授权时内部执行。统一计划驱动 cue_sheet/动画，`render_bindings` 连接原字幕与可见主体，运行 `validate_handoff.py` 检查 [实际接线](references/handoff-contract.md)。继续当前可用引擎，不强制安装其他制作 Skill。新语义重建或画质重修在编码前读 [版式硬门禁](references/layout-hard-gates.md) 与 [句子展示点](references/sentence-display-points.md)，更新 `layout_contract.json`，运行两份审计；报告须为 `status=pass`，实际画面发现的问题也须修复。地球不占正文右栏；物件中心、路径避字、同级尺度、隐喻和退场都要检查，单一卡片、残留徽章或无标签曲线不能覆盖新句子。
+7. **按本次授权交付并分层验收。** 系列顶栏从开场贯穿片尾，按 [系列顶栏](references/series-chrome.md) 使用左上珊瑚红块＋深黑期数、主题与右上署名；品牌合作 C 角标只用于合作视频。片尾按实际话术和 [收尾对标](references/outro-parity.md) 复用随包对象；仅有头像和按钮不足以覆盖系列的完整配方，不能改成告别卡片栈。按指南运行相应 DOM 证据检查。静态看可识别性和主次，动态观察前/中/后与新旧元素交替，带旁白检查时机；技术检查文件、音频、布局与时长。分别记录通过、失败或未验证。脚本报告只覆盖已执行的检查，技术、语义与审美互不替代。
 
 ## 判断底线
 
@@ -65,32 +71,4 @@ description: WiseVideo 视频设计与制作的统一流程：将文案、录音
 ## 回复与存档
 
 用户侧简短区分已完成、执行中与待完成，并指向实际产物或检查证据。记录基准不等于已修改视频；草稿或待安装的规则不等于Skill已更新。详细计划与检查证据存本期项目，没有制作就不声称动态效果通过。旧名称 `video-content-director` 仅为兼容入口，规则只维护在 WiseVideo。
-
-## Motion craft recovery (2026-11-09)
-
-When a cut feels flat / like slides: follow `references/design-to-motion.md` and read `.agents/skills/_external/hyperframes-motion/motion.md` before editing cues. Prefer relation path/position/membership changes over inventing CSS float. See `references/external-methods.md` local mirrors.
-
-## Layout hard gates recovery (2026-11-10)
-
-After semantic validate (`validate_plan` / `validate_concepts` / `audit_visual_plan`), **run layout hard gates before encode**: read `references/layout-hard-gates.md`, write/update `layout_contract.json`, then `python3 scripts/audit_layout_hard_gates.py` must report `status=pass`. Earth reserved as a right column / left-justified account boards or chart groups, `center_x` outside **[0.46, 0.54]**, paths covering text, metaphor mismatch (e.g. 卖出→wallet), unequal sibling cards, stale layers after a new claim, or unintended overlap → FAIL; do not encode. Static HTML must be able to fail these even without a live DOM measure.
-
-## Asset display + outro parity recovery (2026-11-10)
-
-Layout hard gates can pass while the film still feels boxy / off-center / weak-ending.
-Also read `references/sentence-display-points.md` and `references/outro-parity.md`, then run:
-
-`python3 scripts/audit_sentence_display_points.py --html … --plan … --inventory … --check-outro`
-
-Must report `status=pass` before claiming visual expression is done. Lone claim/card covering a whole spoken sentence, a leftover identity badge (e.g. lone 纳指100) covering a new spoken sentence with no noun+verb scene, unlabeled leftover strokes that do not express the spoken sell / wait −10% / buyback action, decorative short-label boxes, missing verb action, or farewell text-stack instead of `wise-outro-approved-v1` → FAIL.
-
-Secondary form reference (method only, not look): `@xuanyuancoding` — multi-actor object theater, noun=prop / verb=path, layered scenes. See `_external/skill-asset-display-learning.md`.
-
-## Series chrome + outro objects (2026-11-10)
-
-Nasdaq-series extras are fail-able, not a side comment. Read `references/series-chrome.md` and `references/outro-parity.md`.
-
-- Left: coral-red episode square (`#eb7169`) + two lines `纳斯达克投资 · 第N期` / topic question, from t=0 through outro.
-- Right: `#wise-brand-logo` at about `left:1634px` (never the background-template default `left:76px` for this series).
-- Subscribe-only outros must match published EP10 objects (portrait, WiseInvest, `美股 · 宏观 · 科技 · AI`, `用大白话，讲清楚市场`, red 关注 · 订阅, gold 收藏) — having only a portrait and a red button is not enough.
-- Collab C header stays for brand-partnership videos only; see production-controls.md.
 

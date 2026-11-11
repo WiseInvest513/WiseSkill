@@ -14,6 +14,7 @@ Exit codes:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
 import re
@@ -119,6 +120,13 @@ PATH_LABEL_NEAR_PX = 90.0
 
 def _layout_mod():
     spec = importlib.util.spec_from_file_location("audit_layout_hard_gates", LAYOUT_AUDITOR)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def _chrome_mod():
+    spec = importlib.util.spec_from_file_location("audit_chrome_outro", Path(__file__).with_name("audit_chrome_outro.py"))
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
@@ -509,6 +517,7 @@ def audit_decorative_boxes(html: str) -> List[Dict[str, Any]]:
 
 
 def audit_outro(html: str, plan: Optional[Dict[str, Any]], check_tg: bool) -> List[Dict[str, Any]]:
+    """Legacy source heuristics only; no color, visibility, icon or timing proof."""
     findings: List[Dict[str, Any]] = []
     has_portrait = bool(OUTRO_PORTRAIT.search(html))
     has_sub = bool(OUTRO_SUBSCRIBE.search(html))
@@ -564,12 +573,33 @@ def audit(args: argparse.Namespace) -> Dict[str, Any]:
         findings.extend(audit_stale_identity(plan, html, cues, captions))
     findings.extend(audit_unlabeled_strokes(html, plan, cues, captions))
     findings.extend(audit_decorative_boxes(html))
+    dom_report = None
     if args.check_outro:
         blob = html
         if plan:
             blob += json.dumps(plan, ensure_ascii=False)
         need_tg = bool(re.search(r'电报|Telegram|交流群', blob))
-        findings.extend(audit_outro(html, plan, check_tg=need_tg and args.require_tg))
+        # Browser evidence supersedes legacy identifier regexes (portable templates
+        # use data roles). Without it retain useful source-level negative checks.
+        if not getattr(args, 'dom_evidence', None):
+            findings.extend(audit_outro(html, plan, check_tg=need_tg and args.require_tg))
+    if args.check_outro or getattr(args, 'check_series', False) or getattr(args, 'outro_policy', None):
+        dom_report = _chrome_mod().from_args(args)
+        if getattr(args, 'dom_evidence', None):
+            evidence = _load_json(Path(args.dom_evidence)) or {}
+            source_sha = evidence.get('document_sha256')
+            if not source_sha:
+                dom_report['not_checked'].append({'code': 'dom_source_hash_missing'})
+                if dom_report['status'] == 'pass':
+                    dom_report['status'] = 'not_checked'
+                    dom_report['encode_allowed'] = False
+            elif source_sha != hashlib.sha256(html_path.read_bytes()).hexdigest():
+                dom_report['findings'].append({'code': 'dom_source_hash_mismatch', 'gate': 'sampled_chrome_outro',
+                                               'evidence': {'html': str(html_path), 'captured_url': evidence.get('url')}})
+                dom_report['status'] = 'fail'
+                dom_report['encode_allowed'] = False
+                dom_report['finding_count'] = len(dom_report['findings'])
+        findings.extend(dom_report['findings'])
 
     dedup = []
     seen = set()
@@ -584,7 +614,7 @@ def audit(args: argparse.Namespace) -> Dict[str, Any]:
         seen.add(key)
         dedup.append(f)
 
-    status = 'pass' if not dedup else 'fail'
+    status = 'fail' if dedup else 'not_checked' if dom_report and dom_report['status'] != 'pass' else 'pass'
     return {
         'schema_version': 1,
         'status': status,
@@ -592,6 +622,9 @@ def audit(args: argparse.Namespace) -> Dict[str, Any]:
         'finding_count': len(dedup),
         'findings': dedup,
         'encode_allowed': status == 'pass',
+        'scope': 'source_heuristics_plus_optional_sampled_dom',
+        'visual_review': 'not_checked',
+        'chrome_outro': dom_report,
         'inputs': {
             'html': str(html_path),
             'plan': args.plan,
@@ -609,6 +642,7 @@ def main() -> int:
     ap.add_argument('--inventory')
     ap.add_argument('--out')
     ap.add_argument('--check-outro', action='store_true')
+    _chrome_mod().add_arguments(ap)
     ap.add_argument('--require-tg', action='store_true')
     ap.add_argument('--legacy-soft', action='store_true')
     ap.add_argument('--cues', help='optional cue_sheet.json')

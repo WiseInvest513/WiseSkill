@@ -2,6 +2,8 @@
 
 Wise 的个人 AI 工作方法合集：把经过实际使用和迭代的工作流程、视觉参考和自动化工具保存为可独立调用的 Skill。
 
+**新对话 / 新电脑 / Claude Code：先读 [START_HERE.md](START_HERE.md)。** 该入口提供独立安装、环境检查、合成样例导出和完整制作流程；不依赖旧聊天或作者的历史工程。
+
 这个仓库会持续加入新的能力。每项能力单独维护，可以按需安装，也可以安装全部已发布 Skill。
 
 ## 目前包含
@@ -25,14 +27,15 @@ Wise 的个人 AI 工作方法合集：把经过实际使用和迭代的工作�
 
 > 请使用 skill-installer，从 https://github.com/WiseInvest513/WiseSkill 安装 skills/wise-video、skills/wise-thumbnail、skills/wise-editorial-3d、skills/wiseinvest-company-research、skills/wiseinvest-stock-writer 和 skills/wise-silver-glass。先检查本机是否已有同名 Skill；如已有则保留旧版备份后按我的要求更新。安装后读取对应 SKILL.md，按实际任务准备运行依赖。
 
-也可以只指定其中一个目录。Skill 的目录需要完整保留，包括 `references/`、`assets/`、`scripts/` 和 `agents/`。
+视频与发布配套建议一起安装；安装器选择任一时会补齐这两项。也可以只指定其他一个独立能力目录。Skill 的目录需要完整保留，包括 `references/`、`assets/`、`scripts/` 和 `agents/`。
 
 ### 从本地副本安装
 
 下载或克隆本仓库后，在仓库根目录运行：
 
 ```sh
-python3 scripts/install.py --all
+python3 scripts/install.py --video
+# 全部能力可使用 --all；Claude Code 可加 --agent claude
 ```
 
 只安装一个：
@@ -90,13 +93,13 @@ python3 scripts/install.py --skill wise-editorial-3d
 - **视频动画工程**：需要 GSAP 3.14.2。进入已安装的 `wise-video` 目录，执行：
 
 ```sh
-npm install --ignore-scripts
+npm ci --ignore-scripts
 npm run prepare-assets
 ```
 
 这会从 npm 安装固定版本，并将运行库复制到背景与开场目录；片尾共用背景运行库。仓库不提交 `node_modules` 或第三方 JS 构建文件。
 
-- **带原声的视频**：需要 `ffprobe`；导出 MP4 还需要 FFmpeg、Node.js、可用的浏览器和 HyperFrames CLI。历史样片使用 HyperFrames 0.8.32；安装或切换版本后按该版本文档验证，不能把 HTML 编译通过当成视频导出通过。
+- **带原声的视频**：需要 `ffprobe`；导出 MP4 还需要 FFmpeg、Node.js、可用的浏览器和 HyperFrames CLI。本版锁定 HyperFrames 0.9.33 和 Puppeteer Core 25.17.0（见 package-lock.json）；安装或切换版本后按该版本文档验证，不能把 HTML 编译通过当成视频导出通过。
 - **背景**：需要 WebGL 和可用中文字体。跨机器可能发生字体换行差异，导出前必须抽帧检查。
 
 完整接口见 [运行依赖与路径](skills/wise-video/references/runtime-and-paths.md) 和 [编译器接口](skills/wise-video/references/render-adapter.md)。
@@ -123,11 +126,12 @@ npm run prepare-assets
 ## 验证与扩展
 
 ```sh
+python3 -m unittest discover -s tests -v
 python3 -m unittest discover -s skills/wise-video/tests -v
 python3 scripts/check-package.py
 ```
 
-当前分发版包含内容、交接及编译器单元测试，并对实际背景与开场做过无声工程编译检查。历史成片验证来自原制作环境，不能替代新内容、新机器的画面和声音验收。
+当前分发版包含安装器、资源完整性、内容、交接、编译器及采样DOM门禁回归。复现命令与最新实际验证边界见 [迁移验证记录](PORTABILITY.md)。历史成片验证来自原制作环境，不能替代新内容、新机器的画面和声音验收。
 
 后续新增能力放在 `skills/<skill-name>/`，至少包含带 `name` 和 `description` 的 `SKILL.md`，按需要附脚本、参考及测试；然后更新本页目录。不要把企业分析、配图、剪辑的全部规则挤进同一入口。
 

@@ -1,0 +1,854 @@
+{
+  "schema_version": 1,
+  "purpose": "Reusable concept objects, not real product UI. Match entity, unit and scene meaning before reuse. Approval of style does not approve all uses.",
+  "assets": [
+    {
+      "asset_id": "wise-3d-bank-v1",
+      "path": "generated/bank.png",
+      "sha256": "3830dfbc3e663358cbae5b7f3da5ba689ceff299a8ddb830575be3e726c303a1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "bank_account_container",
+      "currency": null,
+      "allowed_uses": [
+        "海外中转账户",
+        "银行账户概念"
+      ],
+      "constraints": [
+        "不是某个城市、州、真实总部或监管机关的准确建筑。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Existing user accepted Wise material style; scene meaning must still be reviewed",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-broker-v1",
+      "path": "generated/broker.png",
+      "sha256": "2eeb3584a923aa964846cd3279d6da7d98a001fc9d0a675a52727eacfa1f0d80",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "trading_account_or_terminal",
+      "currency": null,
+      "allowed_uses": [
+        "证券账户",
+        "概念交易终端"
+      ],
+      "constraints": [
+        "不是品牌身份标识；不是实际APP按钮或界面。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Existing user accepted Wise material style; scene meaning must still be reviewed",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-wallet-v1",
+      "path": "generated/wallet.png",
+      "sha256": "017b7255bb6ee4484fcc8dad8498275537e093a67201df724ffc09e425db2929",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "money_container",
+      "currency": "USD-like",
+      "allowed_uses": [
+        "钱包",
+        "持有资金的容器"
+      ],
+      "constraints": [
+        "图内有$纸币，不用作USDT金额或法币兑换动作本身。",
+        "不要用同一钱包概括所有金额、转账、奖励和资金来源。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Existing user accepted Wise material style; scene meaning must still be reviewed",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-certificate-v1",
+      "path": "generated/certificate.png",
+      "sha256": "10dbc8c5e3ec2a101706d727b43f3272c9e8c963c13d4418f063f9bfaa026186",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "security_document",
+      "currency": null,
+      "allowed_uses": [
+        "股票或权利凭证概念"
+      ],
+      "constraints": [
+        "不是监管、许可、保本或审核通过的证据。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Existing user accepted Wise material style; scene meaning must still be reviewed",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-token-v1",
+      "path": "generated/token.png",
+      "sha256": "c15f32eec45c2aa055d9e71479658addcbf315dfda2287763f848f680c0cff43",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "generic_digital_asset",
+      "currency": null,
+      "allowed_uses": [
+        "数字资产概念"
+      ],
+      "constraints": [
+        "三节点符号不是Tether标识；不能当USDT、USDT0或其他精确币种Logo。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Existing user accepted Wise material style; scene meaning must still be reviewed",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-ai-server-v1",
+      "path": "generated/ai-server.png",
+      "sha256": "af4955601903f87807f9c646cefc6a7492584da4ab11609cfcbb3140cee314fe",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "ai_computing_concept",
+      "currency": null,
+      "allowed_uses": [
+        "AI运算服务器概念物件"
+      ],
+      "constraints": [
+        "不是任何具体型号、厂商商标或真实性能证据；数量为视觉组合，不代表产品数量。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent viewed; V1 was produced; user has not separately approved each generated object",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-semiconductor-v1",
+      "path": "generated/semiconductor.png",
+      "sha256": "0bea020a86a89dbb7de4d3d062bd28e8a2b42a91d01a4cee11f628aceaeda552",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "semiconductor_concept",
+      "currency": null,
+      "allowed_uses": [
+        "半导体芯片概念物件"
+      ],
+      "constraints": [
+        "不是任何具体型号、厂商商标或真实性能证据；数量为视觉组合，不代表产品数量。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent viewed; V1 was produced; user has not separately approved each generated object",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-storage-v1",
+      "path": "generated/storage.png",
+      "sha256": "84baab3e469c5cff3597c06c0b17608704343475e613047bc8424deafd1a701a",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "memory_and_storage_concept",
+      "currency": null,
+      "allowed_uses": [
+        "存储条与存储盘概念物件"
+      ],
+      "constraints": [
+        "不是任何具体型号、厂商商标或真实性能证据；数量为视觉组合，不代表产品数量。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent viewed; V1 was produced; user has not separately approved each generated object",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-usd-banknotes-v1",
+      "path": "generated/usd-banknotes.png",
+      "sha256": "83443fe44e028daf130c7391a2e2f0cb0d26dacc68cf05cbad813963766d0614",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "currency_amount",
+      "currency": "USD",
+      "allowed_uses": [
+        "美元资金",
+        "USD余额",
+        "汇出或收取的美元"
+      ],
+      "constraints": [
+        "带$符号，限定USD语境；不能把50 USDT改成50 USD或以该图替代USDT精确币种。",
+        "金额、币种、条件由可编辑文字给出；纸张数不代表金额。"
+      ],
+      "asset_status": "available_visual_reviewed_v2_candidate",
+      "approval_scope": "User requested these semantic elements; root agent generated and visually inspected; final scene review remains",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-money-coins-neutral-v1",
+      "path": "generated/money-coins-neutral.png",
+      "sha256": "5d4a16969eee6f621b716bbe7163c741998ff36c8a2bde1f010a017ec2b939f2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "currency_neutral_amount",
+      "currency": null,
+      "allowed_uses": [
+        "金额",
+        "现金型奖励概念",
+        "带独立明确USDT单位的数量"
+      ],
+      "constraints": [
+        "无币种符号；使用时必须就近标出原文精确币种与数额。",
+        "不把金色材质解释为黄金资产；币数不代表真实金额或收益。"
+      ],
+      "asset_status": "available_visual_reviewed_v2_candidate",
+      "approval_scope": "User requested these semantic elements; root agent generated and visually inspected; final scene review remains",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-person-thinking-v1",
+      "path": "generated/person-thinking.png",
+      "sha256": "580e8c30b520b478b32d574ad038d19d2d7b1c530ac27ef739246af16a1928cd",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "generic_user_considering",
+      "currency": null,
+      "allowed_uses": [
+        "用户思考",
+        "操作负担",
+        "选择或体验对比"
+      ],
+      "constraints": [
+        "中性示意角色，不代表Wise本人、真实客户、证言或专家背书。",
+        "仅当人物承担明确认知任务时使用；不能在所有镜头充当装饰主持人。",
+        "人物姿态不证明开户审批结果、时间或特定券商客观优劣。"
+      ],
+      "asset_status": "available_visual_reviewed_v2_candidate",
+      "approval_scope": "User requested these semantic elements; root agent generated and visually inspected; final scene review remains",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-producer-prices-daily-v2-v1",
+      "path": "generated/daily-v2-producer-prices-v1.png",
+      "sha256": "5eedc5b2398267b3eee546b914057a4f41029bb064eb94332a72693b639aac7d",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "producer_output_price_concept",
+      "currency": null,
+      "allowed_uses": [
+        "PPI 的生产者价格语境",
+        "制造环节的产品价格概念"
+      ],
+      "constraints": [
+        "不是官方 PPI 图表或经济数据；使用时独立写明指标与口径。",
+        "空白价签不代表实际价格，工厂不是特定企业或真实地点。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-retail-basket-daily-v2-v1",
+      "path": "generated/daily-v2-retail-basket-v1.png",
+      "sha256": "1fa57e78adb9700815e7f23a2a399223f68674926cd40c6d4c438519b404ef4b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "household_retail_consumption",
+      "currency": null,
+      "allowed_uses": [
+        "零售销售与消费活动",
+        "配明确标签的 CPI/PCE 消费价格语境"
+      ],
+      "constraints": [
+        "CPI、PCE、零售销售必须用独立文案区分，不能由同一篮子证明指标相同。",
+        "商品数量、小票纹理不代表统计权重、真实销售额或官方消费篮子。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-employment-report-daily-v2-v1",
+      "path": "generated/daily-v2-employment-report-v1.png",
+      "sha256": "8edeace8313e93b0a5c48864e04fdde896d0a361c2d5f087243f1dac84dba4ff",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "employment_statistics_concept",
+      "currency": null,
+      "allowed_uses": [
+        "就业报告",
+        "配精确标签的非农就业、初请失业金观察"
+      ],
+      "constraints": [
+        "不可代指 ECI（就业成本指数）；ECI 是工资和福利等雇佣成本，需单独组件。",
+        "不是 BLS 官方文件、真实个人证件或就业资格认证；不同就业指标需明确命名。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-policy-podium-daily-v2-v1",
+      "path": "generated/daily-v2-policy-podium-v1.png",
+      "sha256": "d264dae4de4bb23147f0b1a64e27f8c1206969a4ffc13ce6be421f6819e1d92b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "generic_public_announcement",
+      "currency": null,
+      "allowed_uses": [
+        "政策讲话",
+        "新闻发布会",
+        "一般公共议题宣布"
+      ],
+      "constraints": [
+        "通用发言概念，不是美联储、IMF 或任何机构的官方标识或真实会场。",
+        "表盘不能承载真实利率、时间、表决结果；说话人与机构身份另用准确文字/官方素材。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-earnings-report-daily-v2-v1",
+      "path": "generated/daily-v2-earnings-report-v1.png",
+      "sha256": "1312019abda8d02b52035919a65b8275850aaf09f72ad377ae0516b6cb7309a0",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "corporate_reporting_document",
+      "currency": null,
+      "allowed_uses": [
+        "公司财报",
+        "经营结果资料",
+        "标明未来时间口径的业绩指引"
+      ],
+      "constraints": [
+        "页内图表是装饰，不代表真实数据、利润增长、估值或投资回报。",
+        "当结论为下降/亏损时，另以明确数据组件表达，避免把装饰上升线当作结论。",
+        "不是任何公司的官方年报封面、审计意见或监管证明。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-chip-equipment-daily-v2-v1",
+      "path": "generated/daily-v2-chip-equipment-v1.png",
+      "sha256": "f7ecf1868662f29b729034478af60fa9a4625bca42995660c96e9c34f7e2e2cd",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "generic_semiconductor_manufacturing_equipment",
+      "currency": null,
+      "allowed_uses": [
+        "半导体制造设备概念",
+        "设备采购/设备投资链路"
+      ],
+      "constraints": [
+        "不是 LRCX、ASML 或其他厂商的准确产品型号。",
+        "不证明具体制程、设备性能、技术结构、客户关系或真实订单数量。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-order-book-daily-v2-v1",
+      "path": "generated/daily-v2-order-book-v1.png",
+      "sha256": "bf7f17bd86254629cc707866b19450795fd8cce6080e0aa919ca90c16f1577be",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "procurement_order_record",
+      "currency": null,
+      "allowed_uses": [
+        "采购需求",
+        "商业订单记录",
+        "订单流向的起点或终点"
+      ],
+      "constraints": [
+        "不是证券交易所订单簿/市场深度图；不能以英文文件名将其用于买卖挂单。",
+        "空复选框不表示审批完成、收入已确认或现金已到账；货箱数量不代表真实订单量。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-memory-factory-daily-v2-v1",
+      "path": "generated/daily-v2-memory-factory-v1.png",
+      "sha256": "8eadfa4cebb5a0190f9ae0a12fc15d55bc1fda3326367e907c5420c4a2060733",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "semiconductor_production_capacity_concept",
+      "currency": null,
+      "allowed_uses": [
+        "半导体/存储生产能力",
+        "扩产的多个生产单元示意",
+        "供给侧能力概念"
+      ],
+      "constraints": [
+        "不是真实工厂、总部、特定品牌生产线或可验证的制造流程。",
+        "图内模块数量不代表真实产能；扩产与固定产能分配需另编排不同关系。",
+        "不能当作 HBM、DRAM、NAND 的精确产品结构。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-household-income-daily-v2-v1",
+      "path": "generated/daily-v2-household-income-v1.png",
+      "sha256": "f99b11df9bd52dc3da018796af85d91fde03348e2e0b7ba542ab22490c13dd13",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "household_income_concept",
+      "currency": null,
+      "allowed_uses": [
+        "个人/家庭收入",
+        "家庭收支中的收入端"
+      ],
+      "constraints": [
+        "硬币无币种含义，具体币种、数额和时间口径须独立写明。",
+        "收入不等于支出、利润、存款或房产回报；金币不代表黄金资产。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-trade-prices-daily-v2-v1",
+      "path": "generated/daily-v2-trade-prices-v1.png",
+      "sha256": "7d56ba906245c103833468814ead2343eac1faae654cc59b3421efa06296ef6e",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "international_goods_price_concept",
+      "currency": null,
+      "allowed_uses": [
+        "进口/出口商品价格",
+        "跨境货物价格语境"
+      ],
+      "constraints": [
+        "进口与出口方向必须由独立标签和箭头区分；本图自身没有方向。",
+        "不是汇款、外汇汇率、关税税率或实际港口/海关证明。",
+        "不能以箱数或价签推导真实金额。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-option-contract-daily-v2-v1",
+      "path": "generated/daily-v2-option-contract-v1.png",
+      "sha256": "935279fae448fefd8a2e0c061f4d946ec01b1a0c3870439506aec248d86be59b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "expiring_financial_contract_concept",
+      "currency": null,
+      "allowed_uses": [
+        "配明确标签的期权到期",
+        "金融合约期限/到期提醒"
+      ],
+      "constraints": [
+        "本图不是具体期权合约；到期日、行权价、权利义务须用准确文字或数据给出。",
+        "日历格与钟面装饰不代表真实日期或时刻；不得当官方交易日历。",
+        "不表示到期一定上涨/下跌或已成交。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-election-ballot-daily-v2-v1",
+      "path": "generated/daily-v2-election-ballot-v1.png",
+      "sha256": "1539dd12a0787d183871a0b3c0182cd689d855bfb31c0db99897bbc68dbe81d9",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "generic_election_event",
+      "currency": null,
+      "allowed_uses": [
+        "选举日历",
+        "公共投票概念"
+      ],
+      "constraints": [
+        "不代表具体国家官方票箱、候选人、党派或选举结果。",
+        "选票上的勾不表示某人胜选或观众支持特定立场。"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "Agent inspected isolated PNG on checkerboard and applicable scene samples. Reuse/storage authorized. User has not separately approved every generated object, frame or motion. Final composite review remains required.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG; independently moving physical parts require separate components or new assets",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-xp-badge-v1",
+      "path": "okx-s3-v1/xp-badge-v1.png",
+      "sha256": "b778abab593d448458ae2eeb6a6a30388cd376b60edc36b07ab79198e1367f4b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "noncash_activity_points_badge",
+      "currency": null,
+      "allowed_uses": [
+        "XP活动积分",
+        "模拟/预测活动积分余额或任务奖励"
+      ],
+      "constraints": [
+        "XP为非现金活动积分，不代表美元、USDT、可提现资产或固定现金兑换价值。",
+        "不是OKX或其他平台官方品牌标识；数值与活动资格用可编辑文字表达。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Accepted OKX S3 production used these reviewed materials; storage/reuse authorized. Reuse must still match the new scene meaning and conditions.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-prediction-ticket-v1",
+      "path": "okx-s3-v1/prediction-ticket-v1.png",
+      "sha256": "7b1da6138632617d625132d493e81bb88f1a11cdbacabab52f630acc6e586386",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "event_prediction_share_ticket",
+      "currency": null,
+      "allowed_uses": [
+        "事件预测份额",
+        "Yes选择及持仓份额概念"
+      ],
+      "constraints": [
+        "勾号表示选择，不表示预测正确、审核通过或保证盈利。",
+        "不是官方交易界面、真实凭证或品牌标识；价格、份数、结算条件需要独立注明。",
+        "与XP搭配时表示非现金活动份额，不能暗示现金固定兑换。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Accepted OKX S3 production used these reviewed materials; storage/reuse authorized. Reuse must still match the new scene meaning and conditions.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-leaderboard-v1",
+      "path": "okx-s3-v1/leaderboard-v1.png",
+      "sha256": "85f23c98d3cb21f611b7b93309756de6b4a30038e267cf6cc00b4e9e57bc8f2c",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "generic_activity_ranking_board",
+      "currency": null,
+      "allowed_uses": [
+        "活动排行榜",
+        "PnL或收益率分榜概念"
+      ],
+      "constraints": [
+        "不是实际名次或实时榜单截图，不保证第一名或获奖。",
+        "须就近注明排行指标、资格与条件；任务积分不自动等于交易利润。",
+        "非品牌标识，板内行数仅是概念构图。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Accepted OKX S3 production used these reviewed materials; storage/reuse authorized. Reuse must still match the new scene meaning and conditions.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-phone-blank-v1",
+      "path": "okx-s3-v1/phone-blank-v1.png",
+      "sha256": "85e16f0e5b8fd2bc0111930955452377b964ca170132b35bb987cdc539c34122",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "blank_phone_for_step_diagram",
+      "currency": null,
+      "allowed_uses": [
+        "手机操作入口概念",
+        "明确标示的步骤示意"
+      ],
+      "constraints": [
+        "屏幕为空白概念容器，不代表真实App界面、具体手机品牌或操作成功。",
+        "不能用自行拼造的按钮和界面冒充真实产品截图。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Accepted OKX S3 production used these reviewed materials; storage/reuse authorized. Reuse must still match the new scene meaning and conditions.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-xp-refuel-v1",
+      "path": "okx-s3-v1/xp-refuel-v1.png",
+      "sha256": "aa995144d4ba4af05ee60b890b1f2e29cf08feb940558064320a72dd5b7d4f58",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_channel_present": true,
+      "transparent_background_expected": true,
+      "style": "Wise ivory/navy/gold dimensional objects; soft studio light; isolated cutout",
+      "semantic_role": "noncash_points_replenishment_metaphor",
+      "currency": null,
+      "allowed_uses": [
+        "XP补给或Refuel功能概念",
+        "条件满足后补充活动积分的示意"
+      ],
+      "constraints": [
+        "加油站是补给隐喻，不是实物燃料、现金充值、付费购买或官方品牌标识。",
+        "XP及资格门槛用可编辑文字叠加；XP不是现金或固定现金兑换单位。",
+        "仅在原文有补给概念时使用；不得省略账户、余额和地区条件。"
+      ],
+      "asset_status": "reusable_visual_anchor",
+      "approval_scope": "Accepted OKX S3 production used these reviewed materials; storage/reuse authorized. Reuse must still match the new scene meaning and conditions.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "not_exact_identity": true,
+      "layer_structure": "single_flattened_RGBA_PNG",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-bybit-account-key-v1",
+      "path": "bybit-card-v1/account-key-v1.png",
+      "sha256": "75dd5a683cca07f1429df61f09e5208779fbf1168796b6d061249e07f7a8d52d",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "style": "Wise ivory/navy/gold dimensional objects",
+      "semantic_role": "自主账户与使用权",
+      "currency": null,
+      "allowed_uses": [
+        "自己的账号",
+        "账户控制权"
+      ],
+      "constraints": [
+        "不是官方身份证或平台认证通过证明",
+        "不表示账户永不会被限制"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "User accepted the Bybit complete video and requested archiving; reuse still requires scene-specific review.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "movable_parts": "flattened object only",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    },
+    {
+      "asset_id": "wise-3d-bybit-work-folder-v1",
+      "path": "bybit-card-v1/work-folder-v1.png",
+      "sha256": "f1d30951e255353ffd735a5a9f2eb6ac34fbfb5b13f50695a8bd751bcf46ebd1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_channel_present": true,
+      "style": "Wise ivory/navy/gold dimensional objects",
+      "semantic_role": "累积的AI工作资料",
+      "currency": null,
+      "allowed_uses": [
+        "聊天记录",
+        "项目文档",
+        "工作资料积累"
+      ],
+      "constraints": [
+        "不是某款AI的真实界面",
+        "文件数量不表示真实容量或记录数"
+      ],
+      "asset_status": "available_visual_reviewed",
+      "approval_scope": "User accepted the Bybit complete video and requested archiving; reuse still requires scene-specific review.",
+      "not_a_brand_logo": true,
+      "not_real_product_ui": true,
+      "movable_parts": "flattened object only",
+      "source": "Wise reusable generated object library; selected from accepted productions"
+    }
+  ]
+}

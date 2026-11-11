@@ -162,7 +162,7 @@ class VisualAuditTests(unittest.TestCase):
             original = source.read_bytes()
             result = subprocess.run([sys.executable, str(SCRIPT), str(source), "--out", str(out)], capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
-            self.assertEqual(json.loads(out.read_text())["status"], "review_required")
+            self.assertEqual(json.loads(out.read_text(encoding="utf-8"))["status"], "review_required")
             self.assertEqual(source.read_bytes(), original)
             blocked = subprocess.run([sys.executable, str(SCRIPT), str(source), "--out", str(source)], capture_output=True, text=True)
             self.assertEqual(blocked.returncode, 2)
